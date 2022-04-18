@@ -19,7 +19,11 @@ function EditBlog() {
     setModal(true);
   };
 
-  return <div>EditBlog</div>;
+  return (
+    <div>
+      <div className="container"></div>
+    </div>
+  );
 }
 
 export default EditBlog;
