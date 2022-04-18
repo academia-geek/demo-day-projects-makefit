@@ -1,5 +1,7 @@
 import { Formik } from "formik";
 import React, { useEffect } from "react";
+import * as Yup from "yup";
+import { useDispatch } from "react-redux";
 
 function EditBlog({ modal, close }) {
   const dispacth = useDispatch();
@@ -29,7 +31,7 @@ function EditBlog({ modal, close }) {
           onSubmit={(values, e) => {
             e.preventDefault();
             dispacth(editBlogEntryAsync(modal.id, values));
-            setModal(false);
+            close(false);
           }}
         >
           {({ errors, touched, handleReset }) => (
