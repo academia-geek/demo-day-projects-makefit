@@ -59,6 +59,7 @@ h1 {
 
 .meals {
   display: flex;
+  gap: 2rem;
 }
 
 img {
@@ -67,11 +68,13 @@ img {
 }
 
 article {
+  height: 400px;
   display: flex;
   flex-direction: column;
-  padding: 2rem;
-  margin: 0 1rem;
+  justify-content: space-evenly;
+  place-items: center;
   max-width: 300px;
+  padding: 0.5rem;
   box-shadow: 0 4px 8px 2px rgba(77, 77, 77, 0.15);
 }
 
