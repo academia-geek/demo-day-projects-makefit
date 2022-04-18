@@ -113,3 +113,17 @@ a:hover {
     width: 100%;
   }
 }
+
+
+.h1_landing{
+  color: black;
+}
+.links_landing{
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
+}
+.links_landing:hover{
+  background-color: transparent;
+  cursor: pointer;
+}
