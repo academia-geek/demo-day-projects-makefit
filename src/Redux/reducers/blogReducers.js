@@ -1,4 +1,4 @@
-import typesBlog from "../types/types";
+import {typesBlog} from "../types/types";
 const initialState = {
   posts: [],
 };
