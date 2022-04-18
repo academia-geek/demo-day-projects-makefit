@@ -5,8 +5,8 @@ const LandingPage = () => {
     return (
         <div>
             <h1>MakeFit</h1>
-            {/* <Link><h1>Register</h1></Link>
-            <Link><h1>Login</h1></Link> */}
+            <Link to="/register"><h1>Register</h1></Link>
+            <Link to="/login"><h1>Login</h1></Link>
         </div>
     )
 }
