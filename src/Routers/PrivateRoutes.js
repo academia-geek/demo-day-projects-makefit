@@ -8,7 +8,7 @@ const PrivateRoutes = ({ isAuth, children, email }) => {
 	} else if (isAuth && email === emailAdmin) {
 		return <AdminRoutes />
 	} else {
-		return <Navigate to='/login' />
+		return <Navigate to='/landingpage' />
 	}
 }
 
