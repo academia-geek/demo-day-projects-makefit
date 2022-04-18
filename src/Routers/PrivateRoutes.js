@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import AdminRoutes from "./AdminRoutes";
-let emailAdmin = "makefit@admin.com"
+let emailAdmin = "maketfit@admin.com"
 
 const PrivateRoutes = ({ isAuth, children, email }) => {
         if (isAuth && email !== emailAdmin) {
@@ -9,7 +9,7 @@ const PrivateRoutes = ({ isAuth, children, email }) => {
                 return <AdminRoutes />
         }
         else {
-                return <Navigate to="/login" />;
+                return <Navigate to="/landingpage" />;
         }
 };
 
