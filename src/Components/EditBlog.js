@@ -1,7 +1,8 @@
 import { Formik } from "formik";
-import React, { useEffect } from "react";
+import React     from "react";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
+import { editBlogEntryAsync } from "../Redux/actions/blogActions";
 
 function EditBlog({ modal, close }) {
   const dispacth = useDispatch();

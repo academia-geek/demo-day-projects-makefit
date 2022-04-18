@@ -1,10 +1,15 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useForm } from "../Hooks/useForm";
+import { addBlogEntryAsync } from "../Redux/actions/blogActions";
+import { fileUp } from "../utils/FileUp";
+import uuid from "react-uuid";
 
 function AddBlog() {
   const dispacth = useDispatch();
   // const navigate = useNavigate();
   const [values, handleInputChange, reset] = useForm({
+    id: "",
     title: "",
     description: "",
     video: "",
@@ -14,8 +19,9 @@ function AddBlog() {
   const { title, description, video, category } = values;
 
   const handleSubmit = (e) => {
+    values.id = uuid();
     e.preventDefault();
-    dispacth(addBlogEntryAsync(title, description, video, category));
+    dispacth(addBlogEntryAsync(values));
     reset();
     window.setTimeout(() => {
       e.target.reset();
@@ -24,7 +30,7 @@ function AddBlog() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    FileUp(file)
+    fileUp(file)
       .then((result) => {
         console.log(result);
         values.video = result;

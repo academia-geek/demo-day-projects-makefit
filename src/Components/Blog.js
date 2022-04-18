@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 
 function Blog() {
@@ -14,7 +15,7 @@ function Blog() {
   const dispacth = useDispatch();
 
   useEffect(() => {
-    dispacth(getBlogEntriesAsync());
+    dispacth(listAsync());
   }, [dispacth]);
 
   const navigate = useNavigate();
