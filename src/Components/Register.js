@@ -37,7 +37,7 @@ const Register = () => {
         <div>
 
             <div >
-                MAKEFIT LOGO
+            <Link to="/">LOGO MAKEFIT </Link>
             </div>
 
             <div>

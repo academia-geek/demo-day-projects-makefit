@@ -39,7 +39,7 @@ const Login = () => {
         <div>
 
             <div>
-               LOGO MAKEFIT {/* <img className={styles.logreg_logo__image} alt="logo-amazon" src={AmazonLogo} /> */}
+                <Link to="/">LOGO MAKEFIT </Link>
             </div>
 
 
@@ -116,7 +116,7 @@ const Login = () => {
 
             <div >
                 <h1 ><span>¿Eres nuevo en Amazonas?</span></h1>
-                <Link  to="/register"><button>Crea tu cuenta de Amazonas</button></Link>
+                <Link to="/register"><button>Crea tu cuenta de Amazonas</button></Link>
             </div>
 
 
