@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
+import uuid from "react-uuid";
 import { deleteAsync, listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 
@@ -31,10 +32,12 @@ function BlogSearch() {
     const param = e.target.search.value;
     navigate(`/blog/search/${param}`);
   };
-
+  const postsFiltered = posts.filter((post) =>
+    post.title.toLowerCase().includes(params.search.toLowerCase())
+  );
   return (
     <div>
-      <form onSubmit={handleSubmit} key="1">
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="search"
@@ -42,8 +45,8 @@ function BlogSearch() {
         />
         <button type="submit">Buscar</button>
       </form>
-      {posts.map((post) => {
-        if (post.title.toLowerCase().includes(params.search.toLowerCase())) {
+      {postsFiltered.length > 0 ? (
+        postsFiltered.map((post) => {
           return (
             <div key={post.id}>
               <video src={post.video} width="320" height="240" controls></video>
@@ -54,10 +57,11 @@ function BlogSearch() {
               <button onClick={() => deletePost(post.id)}>Delete</button>
             </div>
           );
-        } else {
-          return <h1>No hay resultados</h1>;
-        }
-      })}
+        })
+      ) : (
+        <h1>No hay resultados</h1>
+      )}
+
       {modal === true ? <EditBlog modal={editModal} close={setModal} /> : ""}
     </div>
   );
