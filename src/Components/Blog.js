@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { deleteAsync, listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 
@@ -10,14 +10,13 @@ function Blog() {
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState([]);
 
-  const { posts } = useSelector((state) => state.posts);
-
   const dispacth = useDispatch();
 
   useEffect(() => {
     dispacth(listAsync());
   }, [dispacth]);
 
+  const { posts } = useSelector((state) => state.posts);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -37,7 +36,7 @@ function Blog() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} key="1">
         <input
           type="text"
           name="search"
@@ -45,12 +44,13 @@ function Blog() {
         />
         <button type="submit">Buscar</button>
       </form>
-      <div>
+      <div key={"hola"}>
         {posts.map((post) => (
           <div key={post.id}>
-            <img src={post.image} alt="blog" />
+            <video src={post.video} width="320" height="240" controls></video>
             <h1>{post.title}</h1>
-            <p>{post.body}</p>
+            <p>{post.description}</p>
+            <p>{post.category}</p>
             <button onClick={() => edit(post)}>Edit</button>
             <button onClick={() => deletePost(post.id)}>Delete</button>
           </div>

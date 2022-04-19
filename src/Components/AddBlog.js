@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useForm } from "../Hooks/useForm";
 import { addBlogEntryAsync } from "../Redux/actions/blogActions";
-import { fileUp } from "../utils/FileUp";
+import { fileUp } from "../utils/fileUp";
 import uuid from "react-uuid";
 
 function AddBlog() {
@@ -16,7 +16,7 @@ function AddBlog() {
     category: "",
   });
 
-  const { title, description, video, category } = values;
+  const { title, description, category } = values;
 
   const handleSubmit = (e) => {
     values.id = uuid();

@@ -1,13 +1,11 @@
-import { Formik } from "formik";
-import React     from "react";
+import { Field, Form, Formik } from "formik";
+import React from "react";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import { editBlogEntryAsync } from "../Redux/actions/blogActions";
 
 function EditBlog({ modal, close }) {
   const dispacth = useDispatch();
-
-  const { title, description, video, category } = modal;
 
   const EditSchema = Yup.object().shape({
     title: Yup.string()
@@ -29,41 +27,30 @@ function EditBlog({ modal, close }) {
             category: "",
           }}
           validationSchema={EditSchema}
-          onSubmit={(values, e) => {
-            e.preventDefault();
+          onSubmit={(values) => {
             dispacth(editBlogEntryAsync(modal.id, values));
             close(false);
           }}
         >
-          {({ errors, touched, handleReset }) => (
-            <form onSubmit={handleReset}>
+          {({ errors, touched, handleReset, handleChange }) => (
+            <Form>
               <div>
                 <label htmlFor="title">Title</label>
-                <input type="text" id="title" name="title" value={title} />
+                <Field type="text" id="title" name="title" />
                 {errors.title && touched.title ? (
                   <div className="error">{errors.title}</div>
                 ) : null}
               </div>
               <div>
                 <label htmlFor="description">Description</label>
-                <input
-                  type="text"
-                  id="description"
-                  name="description"
-                  value={description}
-                />
+                <Field type="text" id="description" name="description" />
                 {errors.description && touched.description ? (
                   <div className="error">{errors.description}</div>
                 ) : null}
               </div>
               <div>
                 <label htmlFor="category">Category</label>
-                <input
-                  type="text"
-                  id="category"
-                  name="category"
-                  value={category}
-                />
+                <Field type="text" id="category" name="category" />
                 {errors.category && touched.category ? (
                   <div className="error">{errors.category}</div>
                 ) : null}
@@ -71,7 +58,7 @@ function EditBlog({ modal, close }) {
               <div>
                 <button type="submit">Submit</button>
               </div>
-            </form>
+            </Form>
           )}
         </Formik>
       </div>

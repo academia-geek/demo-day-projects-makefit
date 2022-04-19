@@ -26,15 +26,30 @@ function BlogSearch() {
     dispatch(deleteAsync(id));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const param = e.target.search.value;
+    navigate(`/blog/search/${param}`);
+  };
+
   return (
     <div>
+      <form onSubmit={handleSubmit} key="1">
+        <input
+          type="text"
+          name="search"
+          placeholder="Ingresa tu búsqueda en el blog"
+        />
+        <button type="submit">Buscar</button>
+      </form>
       {posts.map((post) => {
         if (post.title.toLowerCase().includes(params.search.toLowerCase())) {
           return (
             <div key={post.id}>
-              <img src={post.image} alt="blog" />
+              <video src={post.video} width="320" height="240" controls></video>
               <h1>{post.title}</h1>
-              <p>{post.body}</p>
+              <p>{post.description}</p>
+              <p>{post.category}</p>
               <button onClick={() => edit(post)}>Edit</button>
               <button onClick={() => deletePost(post.id)}>Delete</button>
             </div>
