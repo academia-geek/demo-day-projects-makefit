@@ -65,8 +65,9 @@ export const deleteAsync = (id) => {
     const getCollection = collection(db, "blogEntries");
     const q = query(getCollection, where("id", "==", id));
     const getDataQuery = await getDocs(q);
-    getDataQuery.forEach((doc) => {
-      deleteDoc(doc(db, "blogEntries", doc.id));
+    console.log(getDataQuery);
+    getDataQuery.forEach((docu) => {
+      deleteDoc(doc(db, "blogEntries", docu.id));
     });
     dispatch(deleteSync(id));
     dispatch(listAsync());
