@@ -1,7 +1,6 @@
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { logoutAsync } from '../Redux/actions/actionLogin'
-
 import { SearchRecipes } from './SearchRecipes'
 import { useGetResults } from '../Hooks/useGetResults'
 import { CardResults } from './CardResults'
@@ -22,7 +21,7 @@ export function ResultsRecipes() {
 			<h1>Results to </h1>
 			<SearchRecipes />
 
-			<section className='meals'>
+			<section>
 				{results.map((recipe) => {
 					return <CardResults key={recipe.id} recipe={recipe} />
 				})}

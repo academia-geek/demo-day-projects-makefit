@@ -1,6 +1,5 @@
 import CardRecipe from './CardRecipe';
 import { useGetRecipes } from '../Hooks/useGetRecipes';
-import '../Styles/cardRecipe.css';
 import { SearchRecipes } from './SearchRecipes';
 import styles from "../Styles/Dashboard/Dashboard.module.scss"
 

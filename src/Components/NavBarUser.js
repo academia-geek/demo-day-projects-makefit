@@ -20,7 +20,7 @@ const NavBarUser = () => {
                 <Link to="/blog">Blog</Link>
                 <Link to="/blog/add">Agregar entrada el blog</Link>
                 <button onClick={() => handleLogout()}>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <i className="fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </div>
         </div>
