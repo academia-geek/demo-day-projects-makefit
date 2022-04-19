@@ -6,6 +6,7 @@ import uuid from "react-uuid";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import styles from "../Styles/Blog/AddBlog.module.scss";
+import Swal from "sweetalert2";
 
 let videoCloud;
 
@@ -23,9 +24,21 @@ function AddBlog() {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(file);
+    Swal.fire({
+      icon: 'warning',
+      title: 'Espere mientras carga la imagen',
+      showConfirmButton: false,
+      timer: 1500
+    })
     fileUp(file)
       .then((result) => {
         videoCloud = result;
+        Swal.fire({
+          icon: 'success',
+          title: 'Imagen cargada correctamente',
+          showConfirmButton: false,
+          timer: 1500
+        })
       })
       .catch((err) => {
         console.log(err);
@@ -54,13 +67,30 @@ function AddBlog() {
           video: "",
         }}
         validationSchema={AddSchema}
-        onSubmit={(values) => {
-          values.id = uuid();
-          values.video = videoCloud;
-          dispacth(addBlogEntryAsync(values));
+
+        onSubmit={(values, {resetForm}) => {
+          if (videoCloud === undefined){
+            Swal.fire({
+              icon: 'warning',
+              title: 'Por favor cargue una imagen',
+            })
+          }else{
+            values.id = uuid();
+            values.video = videoCloud;
+            console.log(values)
+            dispacth(addBlogEntryAsync(values));
+            resetForm();
+            Swal.fire({
+              icon: 'success',
+              title: 'Producto agregado correctamente',
+              showConfirmButton: false,
+              timer: 1500
+            })
+            videoCloud = undefined;
+          } 
         }}
       >
-        {({ errors, touched, handleReset }) => (
+        {({ errors, touched }) => (
           <Form className={styles.add_form}>
 
             <div className={styles.add_input}>
@@ -88,9 +118,9 @@ function AddBlog() {
             </div>
 
             <div className={styles.add_input}>
-              <label  className={styles.add_input__label} htmlFor="video"><i className="fa-solid fa-upload"></i>Cargar video</label>
+              <label className={styles.add_input__label} htmlFor="video"><i className="fa-solid fa-upload"></i>Cargar video</label>
               <Field
-              className={styles.add_input__none}
+                className={styles.add_input__none}
                 type="file"
                 id="video"
                 name="video"
