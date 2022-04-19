@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { editBlogEntryAsync } from "../Redux/actions/blogActions";
 import { useForm } from "../Hooks/useForm";
-import "../Styles/EditBlog.css";
+import "../Styles/General/EditBlog.css";
 
 function EditBlog({ modal, close }) {
   const dispacth = useDispatch();

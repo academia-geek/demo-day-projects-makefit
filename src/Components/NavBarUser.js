@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logoutAsync } from '../Redux/actions/actionLogin';
+import styles from "../Styles/Navbar/Navbar.module.scss";
+import Logo from "../Styles/Images/LOGO.png"
 
 const NavBarUser = () => {
     const dispatch = useDispatch()
@@ -12,11 +14,15 @@ const NavBarUser = () => {
 		navigate('/landingpage')
 	}
     return (
-        <div>
-            <Link to="/home">Home</Link>
-            <Link to="/blog">Blog</Link>
-            <Link to="/blog/add">Agregar entrada el blog</Link>
-            <button style={{width: "150px"}}onClick={() => handleLogout()}>LogOut</button>
+        <div className={styles.nav_container}>
+            <Link to="/home"><img src={Logo} alt=""></img></Link>
+            <div className={styles.nav_options}>
+                <Link to="/blog">Blog</Link>
+                <Link to="/blog/add">Agregar entrada el blog</Link>
+                <button onClick={() => handleLogout()}>
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
         </div>
     )
 }
