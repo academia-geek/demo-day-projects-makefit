@@ -12,23 +12,6 @@ function AddBlog() {
   const dispacth = useDispatch();
   // const navigate = useNavigate();
 
-  // const values = {
-  //   title: "",
-  //   description: "",
-  //   category: "",
-  //   video: "",
-  // };
-
-  const handleSubmit = (e) => {
-    e.target.values.id = uuid();
-    e.preventDefault();
-    // dispacth(addBlogEntryAsync(values));
-    // reset();
-    window.setTimeout(() => {
-      e.target.reset();
-    }, 2000);
-  };
-
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     console.log(file);
@@ -108,7 +91,6 @@ function AddBlog() {
           </Form>
         )}
       </Formik>
-      <form onSubmit={handleSubmit}></form>
     </div>
   );
 }
