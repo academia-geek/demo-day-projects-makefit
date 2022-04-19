@@ -1,7 +1,7 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { logoutAsync } from '../Redux/actions/actionLogin'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { logoutAsync } from '../Redux/actions/actionLogin';
 
 const NavBarUser = () => {
     const dispatch = useDispatch()
