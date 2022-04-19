@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { registerAsync } from '../Redux/actions/actionRegister';
+import styles from "../Styles/Login_Register/Login.module.scss";
+import Logo from "../Styles/Images/LOGO.png";
 
 //validaciones de cada input
 const SignupSchema = Yup.object().shape({
@@ -34,13 +36,13 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className={styles.login_container}>
 
-            <div >
-            <Link to="/">LOGO MAKEFIT </Link>
+            <div className={styles.login_logo}>
+                <Link to="/"><img src={Logo} alt=""></img> </Link>
             </div>
 
-            <div>
+            <div className={styles.login_form}>
                 <Formik
                     initialValues={{
                         nombre: "",
@@ -59,7 +61,7 @@ const Register = () => {
                                 <h1>Crear cuenta</h1>
                             </div>
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Nombre</label>
                                 <Field name="nombre" type="text" />
                                 {errors.nombre && touched.nombre ? (
@@ -69,7 +71,7 @@ const Register = () => {
                                 ) : null}
                             </div>
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Email</label>
                                 <Field name="email" type="text" />
                                 {errors.email && touched.email ? (
@@ -79,7 +81,7 @@ const Register = () => {
                                 ) : null}
                             </div>
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Contraseña</label>
                                 <Field name="password" type="password" autoComplete="off" />
                                 {errors.password && touched.password ? (
@@ -87,13 +89,9 @@ const Register = () => {
                                         {errors.password}
                                     </div>
                                 ) : null}
-                                <h5>
-                                    <i className="fa-solid fa-info"></i>
-                                    La contraseña debe contener al menos seis caracteres.
-                                </h5>
-                            </div>
+                            </div >
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Vuelva a escribir la contraseña</label>
                                 <Field name="pass2" type="password" autoComplete="off" />
                                 {errors.pass2 && touched.pass2 ? (
@@ -103,11 +101,11 @@ const Register = () => {
                                 ) : null}
                             </div>
 
-                            <button type="submit">
+                            <button className={styles.login_continue__btn} type="submit">
                                 Registrarse
                             </button>
 
-                            <div>
+                            <div className={styles.login_text}>
                                 <h1>Al crear un cuenta, aceptas las
                                     <span>Condiciones de uso</span>
                                     y el
@@ -124,7 +122,7 @@ const Register = () => {
                 </Formik>
             </div>
 
-            <div>
+            <div className={styles.login_change}>
                 <h1 ><span>¿Ya tienes una cuenta?</span></h1>
                 <Link to="/login"><button>Inicia sesión</button></Link>
             </div>

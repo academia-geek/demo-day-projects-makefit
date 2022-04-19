@@ -10,7 +10,7 @@ export function SearchRecipes() {
 				<form>
 					<input onChange={getQuery} type='text' placeholder='Query ' ref={queryRef} />
 					<button>
-						<Link to={`/results/${query}`}>Search Ceripes</Link>
+						<Link to={`/results/${query}`}><i className="fa-solid fa-magnifying-glass"></i></Link>
 					</button>
 				</form>
 			</section>

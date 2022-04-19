@@ -1,16 +1,20 @@
 import React from 'react'
+import styles from "../Styles/Dashboard/Dashboard.module.scss";
 
 export default function CardRecipe({ recipe }) {
 	return (
-		<article>
-			<h1>{recipe.title}</h1>
-			<img src={recipe.image} alt={recipe.title} />
-			<ul className='instructions'>
-				<li>Preparation time: {recipe.readyInMinutes} minutes</li>
-				<li>Number of servings: {recipe.servings}</li>
-			</ul>
-
-			<a href='/'>Go to Recipe</a>
+		<article className={styles.dash_card}>
+			<div>
+				<img src={recipe.image} alt={recipe.title} />
+				<div className={styles.dash_card__text}>
+					<h1>{recipe.title}</h1>
+					<h2>Preparation time: {recipe.readyInMinutes} minutes</h2>
+					<h2>Number of servings: {recipe.servings}</h2>
+				</div>
+			</div>
+			<div className={styles.dash_card__btn}>
+				<a href='/'>Go to Recipe</a>
+			</div>
 		</article>
 	)
 }

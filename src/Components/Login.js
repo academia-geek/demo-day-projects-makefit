@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { loginEmailPassAsync, loginFacebook, loginGoogle } from '../Redux/actions/actionLogin';
+import styles from "../Styles/Login_Register/Login.module.scss";
+import Logo from "../Styles/Images/LOGO.png";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string()
@@ -36,15 +38,13 @@ const Login = () => {
     }
 
     return (
-        <div>
+        <div className={styles.login_container}>
 
-            <div>
-                <Link to="/">LOGO MAKEFIT </Link>
+            <div className={styles.login_logo}>
+                <Link to="/"><img src={Logo} alt=""></img> </Link>
             </div>
 
-
-
-            <div>
+            <div className={styles.login_form}>
                 <Formik
                     initialValues={{
                         nombre: "",
@@ -62,7 +62,7 @@ const Login = () => {
                                 <h1>Iniciar sesión</h1>
                             </div>
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Email</label>
                                 <Field name="email" type="text" />
                                 {errors.email && touched.email ? (
@@ -72,7 +72,7 @@ const Login = () => {
                                 ) : null}
                             </div>
 
-                            <div>
+                            <div className={styles.login_form__inputs}>
                                 <label>Contraseña</label>
                                 <Field name="password" type="password" autoComplete="off" />
                                 {errors.password && touched.password ? (
@@ -82,11 +82,11 @@ const Login = () => {
                                 ) : null}
                             </div>
 
-                            <button type="submit">
+                            <button className={styles.login_continue__btn} type="submit">
                                 Continuar
                             </button>
 
-                            <div>
+                            <div className={styles.login_text}>
                                 <h1>Al continuar, aceptas las
                                     <span>Condiciones de uso</span>
                                     y el
@@ -103,8 +103,7 @@ const Login = () => {
                 </Formik>
             </div>
 
-            <div>
-                <h1><span>O</span></h1>
+            <div className={styles.login_social__btn}>
                 <button onClick={handleGoogle}   >
                     <i className="fa-brands fa-google"></i>
                 </button>
@@ -114,7 +113,7 @@ const Login = () => {
                 </button>
             </div>
 
-            <div >
+            <div className={styles.login_change}>
                 <h1 ><span>¿Eres nuevo en Amazonas?</span></h1>
                 <Link to="/register"><button>Crea tu cuenta de Amazonas</button></Link>
             </div>
