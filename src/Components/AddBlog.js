@@ -61,14 +61,14 @@ function AddBlog() {
           video: "",
         }}
         validationSchema={AddSchema}
-        onSubmit={(values) => {
+        onSubmit={(values, { resetForm }) => {
           values.id = uuid();
           values.video = videoCloud;
           dispacth(addBlogEntryAsync(values));
-          // navigate("/blog");
+          resetForm();
         }}
       >
-        {({ errors, touched, handleReset }) => (
+        {({ errors, touched }) => (
           <Form>
             <div>
               <label htmlFor="title">Title</label>
