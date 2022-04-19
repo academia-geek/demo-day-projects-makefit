@@ -3,11 +3,11 @@ body {
   background-color: #f3f3f3;
 }
 
-/* .App {
+.App {
   display: flex;
   align-items: center;
   flex-direction: column;
-} */
+}
 
 section {
   margin: 2rem 0 1rem 0;
@@ -115,15 +115,17 @@ a:hover {
 }
 
 
-.h1_landing{
+.h1_landing {
   color: black;
 }
-.links_landing{
+
+.links_landing {
   color: black;
   text-decoration: none;
   background-color: transparent;
 }
-.links_landing:hover{
+
+.links_landing:hover {
   background-color: transparent;
   cursor: pointer;
 }
