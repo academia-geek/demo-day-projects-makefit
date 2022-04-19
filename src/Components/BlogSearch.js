@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import uuid from "react-uuid";
 import { deleteAsync, listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 
