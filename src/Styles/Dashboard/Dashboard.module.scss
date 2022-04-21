@@ -1,0 +1,88 @@
+.dash_container {
+
+    .dash_meals {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .dash_search {
+        display: flex;
+        justify-content: center;
+        margin-top: 16px;
+
+        input {
+            border: 1px solid rgb(216, 216, 216);
+            height: 40px;
+            width: 300px;
+            border-radius: 8px;
+            padding: 14px;
+        }
+
+        button {
+            height: 40px;
+            margin-left: 16px;
+            border-radius: 8px;
+            width: 40px;
+            height: 40px;
+            background-color: #00a8ff;
+            border: none;
+
+            i {
+                color: white;
+            }
+        }
+    }
+
+    .dash_card {
+        border: 1px solid rgb(223, 223, 223);
+        height: 400px;
+        width: 300px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: 50px 40px 40px 40px;
+
+        img {
+            width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .dash_card__text {
+            padding: 10px;
+
+            h1 {
+                font-size: 22px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                font-size: 18px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        }
+
+        .dash_card__btn {
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            margin: auto;
+            background-color: #7f21eb;
+            border: none;
+            border-radius: 8px;
+
+            a {
+                text-decoration: none;
+                font-size: 16px;
+                color: white;
+                font-weight: bold;
+            }
+        }
+    }
+}

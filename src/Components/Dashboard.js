@@ -1,28 +1,19 @@
-import CardRecipe from './CardRecipe'
-import { useGetRecipes } from '../Hooks/useGetRecipes'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { logoutAsync } from '../Redux/actions/actionLogin'
-import '../Styles/cardRecipe.css'
-import { SearchRecipes } from './SearchRecipes'
+import CardRecipe from './CardRecipe';
+import { useGetRecipes } from '../Hooks/useGetRecipes';
+import { SearchRecipes } from './SearchRecipes';
+import styles from "../Styles/Dashboard/Dashboard.module.scss"
 
 export function Dashboard() {
 	const { recipes } = useGetRecipes()
-	const dispatch = useDispatch()
-	const navigate = useNavigate()
-	//cerrar sesion
-	const handleLogout = () => {
-		dispatch(logoutAsync())
-		navigate('/landingpage')
-	}
+	
 
 	return (
-		<main>
-			<button onClick={() => handleLogout()}>LogOut</button>
-			<h1>Macros</h1>
-			<SearchRecipes />
+		<main className={styles.dash_container}>
+			<div className={styles.dash_search}>
+				<SearchRecipes />
+			</div>
 
-			<section className='meals'>
+			<section className={styles.dash_meals}>
 				{recipes.map((recipe) => {
 					return <CardRecipe key={recipe.id} recipe={recipe} />
 				})}
