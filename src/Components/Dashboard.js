@@ -1,9 +1,9 @@
 import CardRecipe from './CardRecipe';
 import { useGetRecipes } from '../Hooks/useGetRecipes';
-import { SearchRecipes } from './SearchRecipes';
 import styles from "../Styles/Dashboard/Dashboard.module.scss"
+import SearchRecipes from './SearchRecipes';
 
-export function Dashboard() {
+const Dashboard = () => {
 	const { recipes } = useGetRecipes()
 	
 
@@ -21,3 +21,5 @@ export function Dashboard() {
 		</main>
 	)
 }
+
+export default Dashboard;

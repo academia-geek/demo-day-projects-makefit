@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from "../Styles/Dashboard/Dashboard.module.scss";
 
-export default function CardRecipe({ recipe }) {
+ const  CardRecipe = ({ recipe }) => {
 	return (
 		<article className={styles.dash_card}>
 			<div>
@@ -18,3 +18,4 @@ export default function CardRecipe({ recipe }) {
 		</article>
 	)
 }
+export default CardRecipe;

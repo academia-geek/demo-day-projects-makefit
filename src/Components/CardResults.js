@@ -1,6 +1,6 @@
 import styles from "../Styles/SearchApi/SearchApi.module.scss";
 
-export function CardResults({ recipe }) {
+const CardResults = ({ recipe }) => {
 	return (
 		<article className={styles.result_card}>
 			<div>
@@ -15,3 +15,5 @@ export function CardResults({ recipe }) {
 		</article>
 	)
 }
+
+export default CardResults;

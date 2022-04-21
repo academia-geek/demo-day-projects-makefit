@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom'
+import { emailAdmin } from '../utils/emailAdmin'
 import AdminRoutes from './AdminRoutes'
-let emailAdmin = 'maketfit@admin.com'
+
 
 const PrivateRoutes = ({ isAuth, children, email }) => {
 	if (isAuth && email !== emailAdmin) {

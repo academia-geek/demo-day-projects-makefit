@@ -1,9 +1,10 @@
-import { SearchRecipes } from './SearchRecipes';
-import { useGetResults } from '../Hooks/useGetResults';
-import { CardResults } from './CardResults';
-import styles from "../Styles/SearchApi/SearchApi.module.scss";
 
-export function ResultsRecipes() {
+import { useGetResults } from '../Hooks/useGetResults';
+import styles from "../Styles/SearchApi/SearchApi.module.scss";
+import CardResults from './CardResults';
+import SearchRecipes from './SearchRecipes';
+
+const ResultsRecipes = () => {
 	const { results } = useGetResults()
 
 	return (
@@ -19,3 +20,4 @@ export function ResultsRecipes() {
 		</main>
 	)
 }
+export default ResultsRecipes;

@@ -1,0 +1,1 @@
+export const emailAdmin = 'maketfit@admin.com';

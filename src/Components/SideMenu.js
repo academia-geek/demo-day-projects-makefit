@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "../Styles/SideMenu/SideMenu.module.scss";
 import LogoRec from "../Styles/Images/logo-white-img.png";
 import { getAuth } from 'firebase/auth';
@@ -6,15 +6,22 @@ import md5 from "md5";
 import { Link } from 'react-router-dom';
 import { logoutAsync } from '../Redux/actions/actionLogin';
 import { useDispatch } from 'react-redux';
+import { emailAdmin } from '../utils/emailAdmin';
 
 const SideMenu = () => {
 
     const dispatch = useDispatch();
+    const [admin, setAdmin] = useState(false);
 
     //obtener usuraio
     const auth = getAuth()
     const user = auth.currentUser;
-    console.log(user.email)
+
+    useEffect(() => {
+        if (user.email === emailAdmin) {
+            setAdmin(true)
+        }
+    }, [user.email]);
 
     //Imagen de gravatar
     const hash = md5(user.email);
@@ -45,8 +52,13 @@ const SideMenu = () => {
                 {/* Items */}
                 <div className={styles.sidemenu_items}>
                     <Link to="/blog"><i className="fa-solid fa-blog"></i> <span>Blog</span></Link>
-                    <Link to="/blog/add"> <i className="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
-                    <Link to="/blog/add"> <i className="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
+                    {admin
+                        ? <Link to="/blog/add">
+                            <i className="fa-solid fa-plus"></i>
+                            <span>Añadir entrada al blog</span>
+                        </Link>
+                        : null
+                    }
                 </div>
 
                 {/* Footer */}
@@ -55,7 +67,7 @@ const SideMenu = () => {
                         <i className="fa-solid fa-arrow-right-from-bracket"></i>
                         <h1>Logout</h1>
                     </button>
-                    
+
                 </div>
             </div>
 
