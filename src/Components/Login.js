@@ -5,7 +5,7 @@ import { Field, Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { loginEmailPassAsync, loginFacebook, loginGoogle } from '../Redux/actions/actionLogin';
 import styles from "../Styles/Login_Register/Login.module.scss";
-import Logo from "../Styles/Images/LOGO.png";
+import Logo from "../Styles/Images/logo-black.png";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string()

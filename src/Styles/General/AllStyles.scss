@@ -1,5 +1,20 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.dash_container {
+    display: flex;
+
+    .dash_menu {
+        border: 30px solid rgb(17, 46, 46);
+        
+    }
+    .dash_routes{
+        display: flex;
+        justify-content: center;
+        border: 2px solid red;
+        width: 100%;
+    }
 }

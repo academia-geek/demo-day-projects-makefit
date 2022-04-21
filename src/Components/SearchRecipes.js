@@ -1,7 +1,7 @@
 import { useGetQuery } from '../Hooks/useGetQuery'
 import { useNavigate } from "react-router-dom";
 
-export function SearchRecipes() {
+const SearchRecipes = () => {
 	const { queryRef, query, getQuery } = useGetQuery()
 	const navigate = useNavigate()
 	return (
@@ -17,3 +17,5 @@ export function SearchRecipes() {
 		</div>
 	)
 }
+
+export default SearchRecipes;

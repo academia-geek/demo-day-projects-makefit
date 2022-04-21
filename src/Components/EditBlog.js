@@ -4,7 +4,7 @@ import { editBlogEntryAsync } from "../Redux/actions/blogActions";
 import { useForm } from "../Hooks/useForm";
 import "../Styles/General/EditBlog.css";
 
-function EditBlog({ modal, close }) {
+const EditBlog = ({ modal, close }) => {
   const dispacth = useDispatch();
 
   const [values, handleInputChange, reset] = useForm({
