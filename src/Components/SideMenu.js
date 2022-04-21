@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from "../Styles/SideMenu/SideMenu.module.scss";
-import Logo from "../Styles/Images/logo-white.png";
 import LogoRec from "../Styles/Images/logo-white-img.png";
 import { getAuth } from 'firebase/auth';
 import md5 from "md5";
@@ -45,17 +44,18 @@ const SideMenu = () => {
 
                 {/* Items */}
                 <div className={styles.sidemenu_items}>
-                    <Link to="/blog"><i class="fa-solid fa-blog"></i> <span>Blog</span></Link>
-                    <Link to="/blog/add"> <i class="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
-                    <Link to="/blog/add"> <i class="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
+                    <Link to="/blog"><i className="fa-solid fa-blog"></i> <span>Blog</span></Link>
+                    <Link to="/blog/add"> <i className="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
+                    <Link to="/blog/add"> <i className="fa-solid fa-plus"></i> <span>Añadir entrada al blog</span></Link>
                 </div>
 
                 {/* Footer */}
                 <div className={styles.sidemenu_footer}>
                     <button onClick={() => handleLogout()}>
                         <i className="fa-solid fa-arrow-right-from-bracket"></i>
+                        <h1>Logout</h1>
                     </button>
-                    <h1>Logout</h1>
+                    
                 </div>
             </div>
 

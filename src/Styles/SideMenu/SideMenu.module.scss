@@ -82,12 +82,14 @@
                     font-size: 25px;
                     color: white;
                 }
+
+                h1 {
+                    width: 500px;
+                    display: none;
+                }
             }
 
-            h1 {
-                width: 500px;
-                display: none;
-            }
+
         }
     }
 
@@ -146,29 +148,32 @@
             float: bottom;
             bottom: 0;
             width: 100%;
-            display: flex;
-            justify-content: center;
             margin-bottom: 20px;
 
             button {
                 background-color: transparent;
                 border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
 
                 i {
                     font-size: 25px;
                     color: white;
                     cursor: pointer;
                 }
+
+                h1 {
+                    width: auto;
+                    font-size: 18px;
+                    display: block;
+                    color: white;
+                    cursor: pointer;
+                    margin-left: 16px;
+                }
             }
 
-            h1 {
-                width: auto;
-                font-size: 18px;
-                display: block;
-                color: white;
-                cursor: pointer;
-                margin-left: 16px;
-            }
+
         }
     }
 }
