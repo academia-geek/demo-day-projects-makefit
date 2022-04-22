@@ -1,29 +1,32 @@
+import { ClockCircleOutlined, PieChartOutlined } from '@ant-design/icons'
 import useGetDetailsRecipe from '../Hooks/useGetDetailsRecipe'
 import { ListIngredients } from './ListIngredients'
 import { NutritionalInfo } from './NutritionalInfo'
+import '../Styles/Details/main.css'
 
 export function DetailsRecipe() {
 	const { results } = useGetDetailsRecipe()
 
 	return (
-		<main>
-			<section>
-				<h1>{results.title}</h1>
-				<div className=''>
-					<figure>
-						<img src={results.image} alt={results.title} />
-					</figure>
-					<div className=''>
-						<div>
-							<span>Ready in {results.readyInMinutes} minutes</span>
+		<main className='layoutRecipe'>
+			<section className='headRecipe'>
+				<figure>
+					<img src={results.image} alt={results.title} />
+				</figure>
+				<div className='titleRecipe'>
+					<h1>{results.title}</h1>
+					<div className='timeRecipe'>
+						<div className='timeBox'>
+							<ClockCircleOutlined />
+							<span>{results.readyInMinutes} minutes</span>
 						</div>
-						<div>
-							<span>Portion {results.servings} persons</span>
+						<div className='timeBox'>
+							<PieChartOutlined />
+							<span>{results.servings} persons</span>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section></section>
 			<ListIngredients listIngredients={results.extendedIngredients} />
 			<NutritionalInfo />
 		</main>

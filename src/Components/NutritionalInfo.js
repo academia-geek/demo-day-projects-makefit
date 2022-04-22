@@ -1,6 +1,5 @@
 import { Table } from 'antd'
 import useGetnutritional from '../Hooks/useGetnutritional'
-import 'antd/dist/antd.css'
 
 export function NutritionalInfo() {
 	const { results, bad, good } = useGetnutritional()
@@ -35,28 +34,30 @@ export function NutritionalInfo() {
 	]
 
 	return (
-		<section>
+		<section className='nutritional'>
 			<h2>Nutritional information</h2>
-			<div className=''>
+			<div className='nutritionalContent'>
 				<h2>Quickview</h2>
-				<div className=''>
-					<h4>Calories</h4>
-					<span>{results.calories}</span>
-				</div>
-				<div className=''>
-					<h4>Carbohydrates</h4>
-					<span>{results.carbs}</span>
-				</div>
-				<div className=''>
-					<h4>Total Fat</h4>
-					<span>{results.fat}</span>
-				</div>
-				<div className=''>
-					<h4>proteins</h4>
-					<span>{results.protein}</span>
+				<div className='nutritionalInfo'>
+					<div className='nutritionalItem'>
+						<h4>Calories</h4>
+						<span>{results.calories}</span>
+					</div>
+					<div className='nutritionalItem'>
+						<h4>Carbohydrates</h4>
+						<span>{results.carbs}</span>
+					</div>
+					<div className='nutritionalItem'>
+						<h4>Total Fat</h4>
+						<span>{results.fat}</span>
+					</div>
+					<div className='nutritionalItem'>
+						<h4>proteins</h4>
+						<span>{results.protein}</span>
+					</div>
 				</div>
 			</div>
-			<div>
+			<div className='nutritionalTable'>
 				<h2>percentage of the daily need covered</h2>
 				<div>
 					<Table columns={columnsBad} dataSource={bad} size='middle' />
