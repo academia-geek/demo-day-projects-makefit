@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { apiKey, baseUrl } from '../utils/apiUrls'
 import { getData } from '../utils/getData'
-import { apiKey, recipesUrl } from '../utils/apiUrls'
 
-export function useGetResults() {
+export function useGetInstructions() {
 	const [results, setResults] = useState([])
-	const { query } = useParams()
-	const url = `${recipesUrl}?addRecipeNutrition=true&query=${query}&number=20&&offset=0&apiKey=${apiKey}`
+	const { id } = useParams()
+
+	const url = `${baseUrl}${id}/analyzedInstructions?includeNutrition=true&apiKey=${apiKey}`
 
 	useEffect(() => {
 		getData(url)
-			.then((data) => setResults(data.results))
+			.then((data) => setResults(data[0].steps))
 			.catch((error) => console.error(error))
 	}, [url])
 

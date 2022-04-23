@@ -1,0 +1,111 @@
+.layoutRecipe {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 1rem;
+  display: grid;
+  gap: 4rem;
+}
+
+.headRecipe {
+  display: grid;
+  place-items: center;
+  gap: 2rem;
+}
+
+.headRecipe figure {
+  margin: 0;
+  width: 80%;
+  padding: 0;
+}
+
+.headRecipe img {
+  width: 100%;
+  object-fit: cover;
+  border-bottom-left-radius: 4rem;
+  border-top-right-radius: 4rem;
+}
+
+.titleRecipe {
+  display: grid;
+  gap: 2rem;
+}
+
+.titleRecipe h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #474A53;
+}
+
+.timeRecipe {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.timeBox {
+  display: flex;
+  gap: 0.5rem;
+  place-items: center;
+}
+
+.timeBox .anticon-clock-circle, .timeBox .anticon-pie-chart {
+  font-size: 1.2rem;
+  color: #474A53;
+}
+
+
+/* lista de ingredientes*/
+
+.listIngredients {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.ingredient {
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* nutritionalInfo*/
+
+.nutritional {
+  display: grid;
+  gap: 3rem;
+}
+
+.nutritionalInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.nutritionalItem {
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em, rgb(0 0 0 / 25%) 0px 0.125em 0.5em, rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
+}
+
+
+@media only screen and (min-width:768px) {
+  .headRecipe {
+    grid-auto-flow: column;
+  }
+
+  .headRecipe figure {
+    width: 50%;
+  }
+
+  .titleRecipe {
+    padding-right: 1rem;
+  }
+}
+
+/*
+#EBC340
+#474A53
+#545861
+*/

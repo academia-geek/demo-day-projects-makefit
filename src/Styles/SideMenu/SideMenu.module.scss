@@ -1,0 +1,179 @@
+.sidemenu_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 100vh;
+    padding: 20px 0px;
+    z-index: 9999;
+    transition: 0.3s all ease-in-out;
+    background-color: rgb(17, 46, 46);
+
+    .sidemenu_body {
+        width: 100%;
+
+        .sidemenu_logo {
+            width: 40px;
+            margin: auto;
+
+            img {
+                width: 40px;
+            }
+        }
+
+        .sidemenu_profile {
+            width: 45px;
+            margin: auto;
+            margin-top: 40px;
+
+            img {
+                width: 45px;
+                border-radius: 50%;
+            }
+
+            h1 {
+                margin-left: -1000px;
+            }
+        }
+
+        .sidemenu_items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+            margin: auto;
+            margin-top: 40px;
+
+            a {
+                text-decoration: none;
+                color: white;
+                margin-top: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                i {
+                    font-size: 25px;
+                    text-align: center;
+                }
+
+                span {
+                    width: 0px;
+                    height: 0px;
+                    opacity: 0;
+                }
+            }
+        }
+
+        .sidemenu_footer {
+            position: absolute;
+            float: bottom;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+
+            button {
+                background-color: transparent;
+                border: none;
+
+                i {
+                    font-size: 25px;
+                    color: white;
+                }
+
+                h1 {
+                    width: 500px;
+                    display: none;
+                }
+            }
+
+
+        }
+    }
+
+
+
+    &:hover {
+        width: 300px;
+
+        .sidemenu_body {
+
+            .sidemenu_profile {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 60px;
+                    border-radius: 50%;
+                }
+
+                h1 {
+                    transition: 0.5s all ease-in-out;
+                    display: block;
+                    font-size: 16px;
+                    margin-top: 16px;
+                    margin-left: 0px;
+                    color: white;
+                }
+            }
+        }
+
+        .sidemenu_items {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 90%;
+            margin: auto;
+            margin-top: 40px;
+            padding: 0px 16px;
+
+            a {
+                span {
+                    margin-left: 16px;
+                    width: 500px;
+                    transition: 0.3s all ease-in-out;
+                    height: auto;
+                    opacity: 1;
+                }
+            }
+        }
+
+        .sidemenu_footer {
+            position: absolute;
+            float: bottom;
+            bottom: 0;
+            width: 100%;
+            margin-bottom: 20px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                i {
+                    font-size: 25px;
+                    color: white;
+                    cursor: pointer;
+                }
+
+                h1 {
+                    width: auto;
+                    font-size: 18px;
+                    display: block;
+                    color: white;
+                    cursor: pointer;
+                    margin-left: 16px;
+                }
+            }
+
+
+        }
+    }
+}

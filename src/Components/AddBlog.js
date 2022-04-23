@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 
 let videoCloud;
 
-function AddBlog() {
+const AddBlog = () => {
   const dispacth = useDispatch();
 
   const handleSubmit = (e) => {
