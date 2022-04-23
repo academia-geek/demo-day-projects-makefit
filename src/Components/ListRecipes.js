@@ -10,9 +10,7 @@ export function ListRecipes({ recipes }) {
 			</div>
 
 			<section className={styles.dash_meals}>
-				{recipes.map((recipe) => {
-					return <CardRecipe key={recipe.id} recipe={recipe} />
-				})}
+				<CardRecipe recipes={recipes} />
 			</section>
 		</main>
 	)

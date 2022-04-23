@@ -68,3 +68,5 @@ export function NutritionalInfo() {
 		</section>
 	)
 }
+
+export { NutritionalInfo as default }
