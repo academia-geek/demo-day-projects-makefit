@@ -6,7 +6,7 @@ import { apiKey, recipesUrl } from '../utils/apiUrls'
 export function useGetResults() {
 	const [results, setResults] = useState([])
 	const { query } = useParams()
-	const url = `${recipesUrl}?addRecipeNutrition=true&query=${query}&number=20&&offset=0&apiKey=${apiKey}`
+	const url = `${recipesUrl}?addRecipeNutrition=true&query=${query}&number=10&&offset=0&apiKey=${apiKey}`
 
 	useEffect(() => {
 		getData(url)
