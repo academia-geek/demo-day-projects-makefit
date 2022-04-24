@@ -4,15 +4,27 @@ import { fileUpload } from '../utils/fileUpload'
 import { getData } from '../utils/getData'
 
 export function useGetPicture() {
-	const [results, setResults] = useState({})
-	const [picture, setPicture] = useState('')
 	const [url, setUrl] = useState('')
+	const [picture, setPicture] = useState('')
+	const [results, setResults] = useState({})
+	const [error, setError] = useState(null)
+	const [loading, setLoading] = useState(false)
+	const [haveData, setHaveData] = useState(false)
 
 	useEffect(() => {
 		if (!url) return
+		setLoading(true)
 		getData(url)
-			.then((data) => setResults(data))
-			.catch((error) => console.error(error))
+			.then((data) => {
+				setResults(data)
+				setLoading(false)
+				setHaveData(true)
+			})
+			.catch((error) => {
+				console.error(error)
+				setError(error)
+				setHaveData(false)
+			})
 	}, [url])
 
 	const convertBase64 = (file) => {
@@ -43,5 +55,5 @@ export function useGetPicture() {
 			.catch((error) => console.error(error))
 	}
 
-	return { results, picture, getPicture }
+	return { results, picture, loading, error, haveData, getPicture }
 }
