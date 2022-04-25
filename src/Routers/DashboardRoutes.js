@@ -1,12 +1,12 @@
-import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import AddBlog from '../Components/AddBlog'
-import Blog from '../Components/Blog'
-import BlogSearch from '../Components/BlogSearch'
-import Dashboard from '../Components/Dashboard'
-import { DetailsRecipe } from '../Components/DetailsRecipe'
-import ResultsRecipes from '../Components/ResultsRecipes'
 import SideMenu from '../Components/SideMenu'
+import Dashboard from '../Components/Dashboard'
+import Blog from '../Components/Blog'
+import AddBlog from '../Components/AddBlog'
+import BlogSearch from '../Components/BlogSearch'
+import ResultsRecipes from '../Components/ResultsRecipes'
+import { AnalyzeImg } from '../Components/AnalyzeImg'
+import { DetailsRecipe } from '../Components/DetailsRecipe'
 
 const DashboardRoutes = () => {
 	return (
@@ -17,6 +17,7 @@ const DashboardRoutes = () => {
 			<div className='dash_routes'>
 				<Routes>
 					<Route path='/home' element={<Dashboard />} />
+					<Route path='/image-analyzer' element={<AnalyzeImg />} />
 					<Route path='/results/:query' element={<ResultsRecipes />} />
 					<Route path='/details/:id' element={<DetailsRecipe />} />
 					<Route path='/blog' element={<Blog />} />
