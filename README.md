@@ -8,17 +8,22 @@ MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios
 
 * Autenticación e inicio de sesión con Google y Facebook
 * Sesiones para mantener al usuario conectado entre páginas
-* Filtro para buscar a monitores
-* Buscador de monitorias
-* Enrutamiento dinamico
-* Página de monitores donde el usuario puede agregar, eliminar y editar a un monitor
-* Página de monitorias donde el usuario puede agregar, eliminar y editar una monitoria
+* Buscador de recetas
+* Reconocimiento de imagen
+* Chatbot
+* Blog
+* Recetas Favoritas
+
+## 📋 Wiki
+
+Puedes encontrar mucho más información en nuestra [wiki](https://github.com/academia-geek/demo-day-projects-makefit/wiki)
 
 ## 🛠️ Tech Stack
 
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>](https://www.w3schools.com/css/)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>](https://www.w3.org/html/)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[<img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="sass" width="40" height="40"/>](https://sass-lang.com/guide)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>](https://reactjs.org/)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/>](https://reactjs.org/)
 [<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>](https://firebase.google.com/)
@@ -28,7 +33,6 @@ MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios
 ## 🚀 Demo
 
 [Makefit Demo](https://github.com/academia-geek/demo-day-projects-makefit)
-
 
 ## 📌 UI Design
 
