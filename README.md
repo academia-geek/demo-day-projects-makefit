@@ -8,11 +8,15 @@ MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios
 
 * Autenticación e inicio de sesión con Google y Facebook
 * Sesiones para mantener al usuario conectado entre páginas
-* Filtro para buscar a monitores
-* Buscador de monitorias
-* Enrutamiento dinamico
-* Página de monitores donde el usuario puede agregar, eliminar y editar a un monitor
-* Página de monitorias donde el usuario puede agregar, eliminar y editar una monitoria
+* Buscador de recetas
+* Reconocimiento de imagen
+* Chatbot
+* Blog
+* Recetas Favoritas
+
+## 📋 Wiki
+
+Puedes encontrar mucho más información en nuestra [wiki](https://github.com/academia-geek/demo-day-projects-makefit/wiki)
 
 ## 🛠️ Tech Stack
 
@@ -28,7 +32,6 @@ MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios
 ## 🚀 Demo
 
 [Makefit Demo](https://github.com/academia-geek/demo-day-projects-makefit)
-
 
 ## 📌 UI Design
 
