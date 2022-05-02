@@ -1,47 +1,187 @@
-.landing_container{
-    background-color: rgb(11, 11, 25);
-    height: 100vh;
-    .landing_nav{
-        height: 80px;
-        background-color: rgb(0, 0, 0);
+/* FONDO PRINCIPAL
+#fed400
+
+SECUNDARIO
+#fede31
+
+TERCIARIO
+#e6c72f
+
+BOTONES
+#3dc795
+ */
+
+
+
+.landing_container {
+    background-color: white;
+
+    .landing_nav {
+        background-color: #fed400;
         display: flex;
         justify-content: space-between;
-        align-items: center; 
-        padding: 0 50px;
+        align-items: center;
+        padding: 15px 50px;
+        height: 15vh;
 
-        img{
-            height: 60px;
+        img {
+            height: 80px;
+            margin-left: 70px;
         }
 
-        div{
+        div {
             display: flex;
-            a{
+            justify-content: space-between;
+            width: 400px;
+
+            a {
                 color: white;
                 text-decoration: none;
                 font-size: 16px;
                 font-weight: bold;
-                margin-right: 50px;
                 transition: 0.3s all ease-in-out;
-                &:hover{
+
+                &:hover {
                     transform: scale(1.05);
                 }
             }
         }
-        
+
     }
-    .img_landing{
+
+    .landing_home {
+        height: 85vh;
         display: flex;
-        flex-direction: column;
         justify-content: center;
+        flex-wrap: wrap;
         align-items: center;
-        margin-top: 100px;
-        h6{
-            color: white;
-            font-size: 14px;
+        background-color: #fed400;
+
+        div {
+            width: 640px;
+
+            @media (max-width: 700px) {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 60px;
+                font-weight: bold;
+                color: rgb(8, 9, 52);
+
+                @media (max-width: 700px) {
+                    font-size: 40px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 400;
+                color: rgb(8, 9, 52);
+
+                @media (max-width: 700px) {
+                    font-size: 16px;
+                }
+            }
         }
-        img{
-            width: 400px;
-            margin-top: 30px;
+
+        img {
+            width: 600px;
+
+            @media (max-width: 1300px) {
+                width: 40%;
+            }
+
+            @media (max-width: 1100px) {
+                width: 70%;
+            }
+
+            @media (max-width: 700px) {
+                width: 100%;
+            }
+        }
+
+        button {
+            background-color: #3dc795;
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s all ease-in-out;
+            height: 50px;
+            width: 200px;
+            cursor: pointer;
+            margin-top: 40px;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid #3dc795;
+                color: #3dc795;
+                transform: scale(1.03);
+            }
+        }
+    }
+
+
+
+    .landing_analyze {
+        height: 85vh;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+
+        div {
+            width: 550px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: 700px) {
+                width: 90%;
+            }
+
+            h1 {
+                font-size: 25px !important;
+                font-weight: bold;
+                color: rgb(8, 9, 52);
+
+                @media (max-width: 700px) {
+                    font-size: 40px;
+                }
+            }
+
+            h2 {
+                font-size: 20px;
+                font-weight: 400;
+                color: rgb(8, 9, 52);
+
+                @media (max-width: 700px) {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        img {
+            width: 500px;
+            margin-left: 15px;
+            margin-right: 15px;
+
+            @media (max-width: 1300px) {
+                width: 40%;
+            }
+
+            @media (max-width: 1100px) {
+                width: 70%;
+            }
+
+            @media (max-width: 700px) {
+                width: 100%;
+            }
         }
     }
 }

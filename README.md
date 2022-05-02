@@ -1,57 +1,76 @@
-# 👋🏼 Bienvenid@ al Demo Day.
+# 🥗 MaketFit
 
-<h3 align="center"><strong>!Bienvenido a tu ultimo proyecto en Academia Geek 🤖,  estamos muy a gusto en que seas parte de nuestra comunidad y poder apoyarte en tu crecimiento profesional en el maravilloso mundo del desarrollo del software!</strong></h3>
+## 📍 Resumen
 
-En este Proyecto a realizar vas a evidenciar los conceptos adquiridos en todo este proceso de aprendizaje como React Js, JavaScript, Redux y Firebase.
+MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios la libertad de encontrar y disfrutar de buenas recetas saludables, al tiempo que brinda confianza en la solidez de las recetas y el aporte nutricional que estas brindan. En general, MakeFit brinda un entorno más dinámico en el que las recetas se puedan compartir al proporcionar la función de búsqueda y resaltar las recetas más destacadas del momento para que las personas comunes y con poco conocimiento culinario, sean parte del mundo gastronómico.
 
-# 🎯 Objetivo del DemoDay:
+## 🧾 Features
 
-Adquirir los conocimientos esenciales para realizar aplicaciones web dinámicas haciendo uso de JavaScript Vanilla. 
+* Autenticación e inicio de sesión con Google y Facebook
+* Sesiones para mantener al usuario conectado entre páginas
+* Buscador de recetas
+* Reconocimiento de imagen
+* Chatbot
+* Blog
+* Recetas Favoritas
 
-Con el Demo Day se pretende que los beneficiarios demuestren todos sus conocimientos adquiridos a empresas Nacionales e Internacionales, con esto pueden vivir la experiencia de exponer un proyecto y una idea de negocio al mundo.
+## 📋 Wiki
 
-# 📹 Video explicado:
+Puedes encontrar mucho más información en nuestra [wiki](https://github.com/academia-geek/demo-day-projects-makefit/wiki)
 
-[¿Como hacer el proyecto DemoDay?](https://drive.google.com/file/d/1kzQ5TuYc0NuIH6qGe5_Wr3Fnrjd5qKJp/view)
+## 🛠️ Tech Stack
 
-# ☕ Pasos para desarrollar el DemoDay:
+[<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>](https://www.w3schools.com/css/)
+[<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>](https://www.w3.org/html/)
+[<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[<img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="sass" width="40" height="40"/>](https://sass-lang.com/guide)
+[<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>](https://reactjs.org/)
+[<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/>](https://reactjs.org/)
+[<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>](https://firebase.google.com/)
+[<img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>](https://git-scm.com/)
+[<img src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg" alt="babel" width="40" height="40"/>](https://babeljs.io/)
 
-1. Crear un proyecto con la plantilla Basic Kanban y en la descripción colocar:
+## 🚀 Demo
 
->- Texto descriptivo.
->- Enlace del prototipo en alta fidelidad (marvel o herramienta usada).
->- Enlace del despliegue.
->- Enlace del video demo.
+[Makefit Demo](https://github.com/academia-geek/demo-day-projects-makefit)
 
-Todo esto usando markdown
+## 📌 UI Design
 
-2. Crear dos milestones que corresponden a todo el desarrollo de la aplicación y se deben crear de esta forma:
+## 💻 Run locally
 
->- **Componente Design Thinking:** Poner una descripción y los objetivos de ese componente.
->- **Componente técnico:** Poner una descripción y los objetivos de ese componente.
+Necesitará tener instalado [Node.js](https://nodejs.org/es/download/)  en su máquina para correr el proyecto en local.
 
-3. Crear issues por cada una de las tareas de Design Thinking:
+clonarlo
 
->- 5 por qué
->- Perfil del cliente
->- Mapa de valor
->- Prototipo de baja fidelidad
->- Prototipo de mediana fidelidad
->- Presentación
+```
+git clone https://github.com/academia-geek/demo-day-projects-makefit.git
+```
 
-4. Crear issues por cada una de las tareas técnicas:
+Ir al directorio del proyecto
 
->- Readme profesional
->- Guía de estilos
->- Landing Page del producto
->- Diseño responsive
->- Autenticación con Google y Facebook
->- Enrutamiento dinámico con protección de rutas
->- Crud con Firebase
->- Imágenes y/o videos en la nube
+```
+cd demo-day-projects-makefit
+```
 
-5. Aquellos issues que consideren crear para su proceso de desarrollo se deben adjuntar al milestone de Componente Técnico.
+Instalar dependencias npm
 
-6. Cada uno de estos issues debe estar asignado a una o más intergrantes del equipo de desarrollo. 
+```
+npm i
+```
 
-7. Colocar etiquetas que logren diferenciar los diferentes issues según el componente al que corresponde.
+Ejecutar el servidor en local
+
+```
+npm run start
+```
+
+Visitar la app
+
+```
+localhost:3000
+```
+
+Desarrollado con ❤️ por
+[Jesus David Pérez Ferrer](https://github.com/Hipns1) |
+[Carlos Garcia](https://github.com/CarlinGebyte) |
+[Yessith Estiven Herrera Sanjuan](https://github.com/yessith)

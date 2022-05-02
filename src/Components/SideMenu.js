@@ -51,14 +51,25 @@ const SideMenu = () => {
 
                 {/* Items */}
                 <div className={styles.sidemenu_items}>
-                    <Link to="/blog"><i className="fa-solid fa-blog"></i> <span>Blog</span></Link>
+                    <Link to="/blog">
+                        <i className="fa-solid fa-blog"></i>
+                        <span>Blog</span>
+                    </Link>
+
                     {admin
                         ? <Link to="/blog/add">
                             <i className="fa-solid fa-plus"></i>
-                            <span>Añadir entrada al blog</span>
+                            <span>Add blog post</span>
                         </Link>
                         : null
                     }
+
+                    <Link to="/image-analyzer">
+                        <i class="fa-solid fa-image"></i>
+                        <span>Search recipe by image</span>
+                    </Link>
+
+
                 </div>
 
                 {/* Footer */}
