@@ -1,10 +1,7 @@
-<p style = 'text-align:center;'>
-<img src="https://res.cloudinary.com/yessith/image/upload/v1651530732/pa6aq5kv1cxspy8neao1.png" alt="MakeFit" width="180px">
-</p>
 
-# 🥗 MaketFit
+![Logo MakeFit](https://res.cloudinary.com/yessith/image/upload/v1651530732/pa6aq5kv1cxspy8neao1.png)
 
-## 📍 Resumen
+# Resumen
 
 MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios la libertad de encontrar y disfrutar de buenas recetas saludables, al tiempo que brinda confianza en la solidez de las recetas y el aporte nutricional que estas brindan. En general, MakeFit brinda un entorno más dinámico en el que las recetas se puedan compartir al proporcionar la función de búsqueda y resaltar las recetas más destacadas del momento para que las personas comunes y con poco conocimiento culinario, sean parte del mundo gastronómico.
 
