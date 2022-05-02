@@ -1,5 +1,5 @@
 <p style = 'text-align:center;'>
-<img src="https://res.cloudinary.com/dcane9asx/image/upload/v1649261924/JxDC6tZK_4x_gkf17b.png" alt="JuveYell" width="180px">
+<img src="https://res.cloudinary.com/yessith/image/upload/v1651530732/pa6aq5kv1cxspy8neao1.png" alt="MakeFit" width="180px">
 </p>
 
 # 🥗 MaketFit
