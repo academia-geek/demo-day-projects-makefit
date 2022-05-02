@@ -12,7 +12,7 @@ export function UploadPicture({ getPicture, picture, children }) {
 				</div>
 				<input onChange={getPicture} type='file' accept='image/*' className='file-input'></input>
 				<figure className='file-preview-img'>
-					<img src={picture} alt='' />
+					<img src={picture} alt='Upload a food' />
 				</figure>
 			</section>
 			{children}

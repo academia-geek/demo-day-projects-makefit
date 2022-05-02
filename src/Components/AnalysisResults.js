@@ -2,8 +2,6 @@ import CardRelated from './CardRelated'
 import { Spinner } from './Spinner'
 
 export function AnalysisResults({ data = {}, haveData, loading, error }) {
-	console.log('🚀 ~ file: AnalysisResults.js ~ line 5 ~ AnalysisResults ~ data', data)
-
 	if (loading) return <Spinner />
 	if (error) console.error(error)
 
@@ -13,31 +11,36 @@ export function AnalysisResults({ data = {}, haveData, loading, error }) {
 				<>
 					<section>
 						<h2>Nutrition profile of the average {data.category.name}</h2>
-						<ul>
-							<li>
-								<span>Calories</span>
-								<span>{data.nutrition.calories.value}</span>
-							</li>
-							<li>
-								<span>fat</span>
-								<span>
-									{data.nutrition.fat.value}
-									{data.nutrition.fat.unit}
-								</span>
-							</li>
-							<li>
-								<span>protein</span>
-								<span>
-									{data.nutrition.protein.value}
-									{data.nutrition.protein.unit}
-								</span>
-							</li>
-							<li>
-								<span>carbs</span>
-								{data.nutrition.carbs.value}
-								{data.nutrition.carbs.unit}
-							</li>
-						</ul>
+						<div className='nutritionalContent'>
+							<h2>Quickview</h2>
+							<div className='nutritionalInfo'>
+								<div className='nutritionalItem'>
+									<h4>Calories</h4>
+									<span>{data.nutrition.calories.value}</span>
+								</div>
+								<div className='nutritionalItem'>
+									<h4>Carbohydrates</h4>
+									<span>
+										{data.nutrition.carbs.value}
+										{data.nutrition.carbs.unit}
+									</span>
+								</div>
+								<div className='nutritionalItem'>
+									<h4>Total Fat</h4>
+									<span>
+										{data.nutrition.fat.value}
+										{data.nutrition.fat.unit}
+									</span>
+								</div>
+								<div className='nutritionalItem'>
+									<h4>proteins</h4>
+									<span>
+										{data.nutrition.protein.value}
+										{data.nutrition.protein.unit}
+									</span>
+								</div>
+							</div>
+						</div>
 					</section>
 
 					<section>
