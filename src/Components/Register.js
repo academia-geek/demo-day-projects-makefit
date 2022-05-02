@@ -107,15 +107,11 @@ const Register = () => {
 
                             <div className={styles.login_text}>
                                 <h1>Al crear un cuenta, aceptas las
-                                    <span>Condiciones de uso</span>
+                                    <span> condiciones de uso </span>
                                     y el
-                                    <span>Aviso de privacidad</span>
-                                    de Amazonas.
+                                    <span> Aviso de privacidad </span>
+                                    de Makefit.
                                 </h1>
-                                <h2>
-                                    <i className="fa-solid fa-caret-right"></i>
-                                    ¿Necesitas ayuda?
-                                </h2>
                             </div>
                         </Form>
                     )}

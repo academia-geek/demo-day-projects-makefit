@@ -88,15 +88,11 @@ const Login = () => {
 
                             <div className={styles.login_text}>
                                 <h1>Al continuar, aceptas las
-                                    <span>Condiciones de uso</span>
+                                    <span> condiciones de uso </span>
                                     y el
-                                    <span>Aviso de privacidad</span>
-                                    de Amazonas.
+                                    <span> aviso de privacidad </span>
+                                    de MakeFit.
                                 </h1>
-                                <h2>
-                                    <i className="fa-solid fa-caret-right"></i>
-                                    ¿Necesitas ayuda?
-                                </h2>
                             </div>
                         </Form>
                     )}
@@ -117,8 +113,6 @@ const Login = () => {
                 <h1 ><span>¿Eres nuevo en Amazonas?</span></h1>
                 <Link to="/register"><button>Crea tu cuenta de Amazonas</button></Link>
             </div>
-
-
         </div>
     );
 };
