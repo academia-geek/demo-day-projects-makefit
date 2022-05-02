@@ -7,16 +7,18 @@ const SearchRecipes = () => {
 	const keyword = query.toLowerCase()
 
 	return (
-		<div className='App'>
-			<section className='controls'>
-				<form onSubmit={() => navigate(`/results/${keyword}`)}>
-					<input onChange={getQuery} type='text' placeholder='Query ' ref={queryRef} />
-					<button>
-						<i className='fa-solid fa-magnifying-glass'></i>
-					</button>
-				</form>
-			</section>
-		</div>
+		<section className='controls'>
+			<div>
+				<h1>Discover Recipes</h1>
+				<p>Get the best recipe every day of the week with our daily picks</p>
+			</div>
+			<form onSubmit={() => navigate(`/results/${keyword}`)}>
+				<input onChange={getQuery} type='text' placeholder='Search for recipes ' ref={queryRef} />
+				<button>
+					<i className='fa-solid fa-magnifying-glass'></i>
+				</button>
+			</form>
+		</section>
 	)
 }
 

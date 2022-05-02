@@ -1,6 +1,7 @@
-# 🥗 MaketFit
 
-## 📍 Resumen
+![Logo MakeFit](https://res.cloudinary.com/yessith/image/upload/v1651530732/pa6aq5kv1cxspy8neao1.png)
+
+# Resumen
 
 MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios la libertad de encontrar y disfrutar de buenas recetas saludables, al tiempo que brinda confianza en la solidez de las recetas y el aporte nutricional que estas brindan. En general, MakeFit brinda un entorno más dinámico en el que las recetas se puedan compartir al proporcionar la función de búsqueda y resaltar las recetas más destacadas del momento para que las personas comunes y con poco conocimiento culinario, sean parte del mundo gastronómico.
 
@@ -16,7 +17,7 @@ MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios
 
 ## 📋 Wiki
 
-Puedes encontrar mucho más información en nuestra [wiki](https://github.com/academia-geek/demo-day-projects-makefit/wiki)
+Puedes encontrar más información sobre MakeFit en nuestra [wiki](https://github.com/academia-geek/demo-day-projects-makefit/wiki)
 
 ## 🛠️ Tech Stack
 
@@ -24,6 +25,7 @@ Puedes encontrar mucho más información en nuestra [wiki](https://github.com/ac
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>](https://www.w3.org/html/)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [<img src="https://sass-lang.com/assets/img/logos/logo-b6e1ef6e.svg" alt="sass" width="40" height="40"/>](https://sass-lang.com/guide)
+[<img src="https://spoonacular.com/application/frontend/images/logo-simple-framed-green-gradient.svg" alt="spoonacular" width="40" height="40"/>](https://spoonacular.com/food-api)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/>](https://reactjs.org/)
 [<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/>](https://reactjs.org/)
 [<img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/>](https://firebase.google.com/)
