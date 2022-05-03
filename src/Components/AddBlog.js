@@ -25,20 +25,20 @@ const AddBlog = () => {
     const file = e.target.files[0];
     console.log(file);
     Swal.fire({
-      icon: 'warning',
-      title: 'Espere mientras carga la imagen',
+      icon: "warning",
+      title: "Espere mientras carga la imagen",
       showConfirmButton: false,
-      timer: 1500
-    })
+      timer: 1500,
+    });
     fileUp(file)
       .then((result) => {
         videoCloud = result;
         Swal.fire({
-          icon: 'success',
-          title: 'Imagen cargada correctamente',
+          icon: "success",
+          title: "Imagen cargada correctamente",
           showConfirmButton: false,
-          timer: 1500
-        })
+          timer: 1500,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -57,7 +57,6 @@ const AddBlog = () => {
   });
   return (
     <div className={styles.add_container}>
-
       <h1>Agregar entrada al blog</h1>
       <Formik
         initialValues={{
@@ -67,32 +66,30 @@ const AddBlog = () => {
           video: "",
         }}
         validationSchema={AddSchema}
-
-        onSubmit={(values, {resetForm}) => {
-          if (videoCloud === undefined){
+        onSubmit={(values, { resetForm }) => {
+          if (videoCloud === undefined) {
             Swal.fire({
-              icon: 'warning',
-              title: 'Por favor cargue una imagen',
-            })
-          }else{
+              icon: "warning",
+              title: "Por favor cargue una imagen",
+            });
+          } else {
             values.id = uuid();
             values.video = videoCloud;
-            console.log(values)
+            console.log(values);
             dispacth(addBlogEntryAsync(values));
             resetForm();
             Swal.fire({
-              icon: 'success',
-              title: 'Producto agregado correctamente',
+              icon: "success",
+              title: "Producto agregado correctamente",
               showConfirmButton: false,
-              timer: 1500
-            })
+              timer: 1500,
+            });
             videoCloud = undefined;
-          } 
+          }
         }}
       >
         {({ errors, touched }) => (
           <Form className={styles.add_form}>
-
             <div className={styles.add_input}>
               <label htmlFor="title">Title</label>
               <Field type="text" id="title" name="title" />
@@ -118,7 +115,9 @@ const AddBlog = () => {
             </div>
 
             <div className={styles.add_input}>
-              <label className={styles.add_input__label} htmlFor="video"><i className="fa-solid fa-upload"></i>Cargar video</label>
+              <label className={styles.add_input__label} htmlFor="video">
+                <i className="fa-solid fa-upload"></i>Cargar video
+              </label>
               <Field
                 className={styles.add_input__none}
                 type="file"
@@ -131,7 +130,9 @@ const AddBlog = () => {
               ) : null}
             </div>
 
-            <button className={styles.add_btn} type="submit">Agregar</button>
+            <button className={styles.add_btn} type="submit">
+              Agregar
+            </button>
           </Form>
         )}
       </Formik>
