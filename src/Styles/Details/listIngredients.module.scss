@@ -1,0 +1,29 @@
+.grid_ingredients {
+	background-color: #fff;
+	border-radius: 20px;
+	& h2 {
+		text-align: center;
+	}
+}
+
+.list_ingredients {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 2rem;
+	list-style: none;
+}
+
+.grid_ingredients_title {
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.ingredient {
+	display: grid;
+	place-items: center;
+	gap: 1rem;
+	padding: 1rem;
+}
