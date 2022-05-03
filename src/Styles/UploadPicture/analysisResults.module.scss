@@ -1,0 +1,13 @@
+.recipes_related {
+	display: grid;
+	gap: 2rem;
+	& h2 {
+		margin: 0;
+	}
+	.recipes_related_grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+		gap: 1rem;
+		padding: 0 0.5rem;
+	}
+}
