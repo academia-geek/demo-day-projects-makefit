@@ -46,7 +46,7 @@ export function NutritionalInfo() {
 						<span>{results.calories}</span>
 					</div>
 					<div className={styles.nutritional_item}>
-						<h4>Carbohydrates</h4>
+						<h4>carbs</h4>
 						<span>{results.carbs}</span>
 					</div>
 					<div className={styles.nutritional_item}>

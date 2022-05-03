@@ -85,3 +85,10 @@
 		}
 	}
 }
+@media only screen and (min-width: 1024px) {
+	.upload {
+		& figure {
+			width: 600px;
+		}
+	}
+}

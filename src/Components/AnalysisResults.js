@@ -14,13 +14,14 @@ export function AnalysisResults({ data = {}, haveData, loading, error }) {
 				<>
 					<section className={stylesDetails.nutritional}>
 						<h2>Nutrition profile of the average {data.category.name}</h2>
+
 						<div className={stylesDetails.nutritional_info}>
 							<div className={stylesDetails.nutritional_item}>
 								<h4>Calories</h4>
 								<span>{data.nutrition.calories.value}</span>
 							</div>
 							<div className={stylesDetails.nutritional_item}>
-								<h4>Carbohydrates</h4>
+								<h4>carbs</h4>
 								<span>
 									{data.nutrition.carbs.value}
 									{data.nutrition.carbs.unit}

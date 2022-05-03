@@ -2,7 +2,7 @@
 	.card_item {
 		display: grid;
 		height: 250px;
-
+		align-content: space-between;
 		.card_img {
 			width: 100%;
 			margin: 0;
