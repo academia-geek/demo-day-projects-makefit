@@ -60,7 +60,7 @@ export function NutritionalInfo() {
 				</div>
 			</div>
 			<div className='nutritionalTable'>
-				<h2>percentage of the daily need covered</h2>
+				<h2>Percentage of the daily need covered</h2>
 				<div>
 					<Table columns={columnsBad} dataSource={bad} size='middle' />
 

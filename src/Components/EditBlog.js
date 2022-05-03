@@ -5,7 +5,7 @@ import { useForm } from "../Hooks/useForm";
 import "../Styles/General/EditBlog.css";
 
 const EditBlog = ({ modal, close }) => {
-  const dispacth = useDispatch();
+  const dispatch = useDispatch();
 
   const [values, handleInputChange, reset] = useForm({
     title: modal.title,
@@ -21,7 +21,7 @@ const EditBlog = ({ modal, close }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispacth(editBlogEntryAsync(modal.id, values));
+    dispatch(editBlogEntryAsync(modal.id, values));
     window.setTimeout(() => {
       handleClose();
     }, 2000);

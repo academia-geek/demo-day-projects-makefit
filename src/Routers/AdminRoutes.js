@@ -19,7 +19,7 @@ const AdminRoutes = () => {
             <div className='dash_routes'>
                 <Routes>
                     <Route path="/home" element={<PruebaAdmin />} />
-                    <Route path="*" element={<Navigate to="/home" />} />
+                    <Route path="/*" element={<Navigate to="/home" />} />
                     <Route path='/results/:query' element={<ResultsRecipes />} />
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/blog/add' element={<AddBlog />} />

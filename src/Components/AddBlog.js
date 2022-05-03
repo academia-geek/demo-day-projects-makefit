@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 let videoCloud;
 
 const AddBlog = () => {
-  const dispacth = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.target.values.id = uuid();
@@ -76,7 +76,7 @@ const AddBlog = () => {
             values.id = uuid();
             values.video = videoCloud;
             console.log(values);
-            dispacth(addBlogEntryAsync(values));
+            dispatch(addBlogEntryAsync(values));
             resetForm();
             Swal.fire({
               icon: "success",
