@@ -1,11 +1,14 @@
 import React from 'react';
 import styles from "../Styles/LandingPage/LandingPage.module.scss";
 import Logo from "../Styles/Images/logo-black.png";
+import LogoWhite from "../Styles/Images/logo-white.png";
 import foodHome from "../Styles/Images/food.png";
 import foodAnalyze from "../Styles/Images/food-analyze.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
+import nutritionTable from "../Styles/Images/nutritionTable.jpg";
+import contactimage from "../Styles/Images/contact.png";
 
 const LandingPage = () => {
     const navigate = useNavigate();
@@ -52,6 +55,7 @@ const LandingPage = () => {
                 <img src={Logo} alt=""></img>
             </nav>
 
+            {/* SECCION DE HOME */}
             <div id="home" className={styles.landing_home}>
                 <motion.div
                     className={styles.landing_home__text}
@@ -70,22 +74,26 @@ const LandingPage = () => {
                 </motion.div>
                 <motion.div
                     className={styles.landing_home__img}
-                    initial={{ x: 700 }}
-                    animate={{ x: 0 }}
-                    transition={{ duration: 1 }}>
+                    initial={{ x: 500, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    transition={{ duration: 1.5 }}>
                     <img src={foodHome} alt="" />
                 </motion.div>
             </div>
 
+            {/* SECCION DE ANALISIS DE NUTRIENTES */}
             <div className={styles.landing_analyze}>
-                <motion.img
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1 }}
-                    src={foodAnalyze}
-                    alt="food" />
+                <div className={styles.landing_analyze__img}>
+                    <motion.img
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        src={foodAnalyze}
+                        alt="food" />
+                </div>
                 <motion.div
+                    className={styles.landing_analyze__text}
                     initial={{ opacity: 0 }}
                     transition={{ duration: 1.5 }}
                     whileInView={{ opacity: 1 }}
@@ -101,28 +109,71 @@ const LandingPage = () => {
                 </motion.div>
             </div>
 
+
+            {/* SECCION DE INFORMACION NUTRICIONAL */}
+            <div id='nutitrionalInfo' className={styles.landing_nutitrionalInfo}>
+                <div className={styles.landing_nutitrionalInfo__img}>
+                    <motion.img
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        src={nutritionTable}
+                        alt="table" />
+                </div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className={styles.landing_nutitrionalInfo__text}>
+                    <h1>Nutritional Information</h1>
+                    <h2>
+                        We compute the nutritional information for recipes
+                        automatically using a proprietary algorithm. With
+                        this information, you can find individual recipes or
+                        even create entire meal plans that satisfy your users'
+                        dietary goals.
+                    </h2>
+                </motion.div>
+            </div>
+
+            {/* SECCION DE FORMULARIO DE CONTACTO */}
             <div id='contact' className={styles.landing_contactForm}>
                 <form onSubmit={handleContact}>
+                    <h1>Contact Us</h1>
+
                     <label>Name</label>
-                    <input name="name" type="text" placeholder="Name"></input>
+                    <input name="name" type="text"></input>
 
                     <label>Email</label>
-                    <input name="email" type="email" placeholder="Email"></input>
+                    <input name="email" type="email"></input>
 
                     <label>Message</label>
-                    <textarea name="message" placeholder="Message"></textarea>
+                    <textarea name="message"></textarea>
 
                     <button>Send</button>
                 </form>
-
-            </div>
-
-            <div id='nutitrionalInfo' className={styles.landing_nutitrionalInfo}>
-
+                <div className={styles.landing_contactForm__img}>
+                    <img src={contactimage} alt="contactpng" />
+                </div>
             </div>
 
             <div id='footer' className={styles.landing_footer}>
+                <div className={styles.landing_footer__img}>
+                    <img src={LogoWhite} alt=""></img>
+                </div>
 
+                <div className={styles.landing_footer__text}>
+                    <h1>© 2022 MakeFit. All rights reserved.</h1>
+                    <div>
+                        <i className="fa-brands fa-facebook"></i>
+                        <i className="fa-brands fa-instagram-square"></i>
+                        <i className="fa-brands fa-youtube"></i>
+                        <i className="fa-brands fa-twitter"></i>
+                        <i className="fa-brands fa-linkedin"></i>
+                    </div>
+                </div>
             </div>
 
         </div>
