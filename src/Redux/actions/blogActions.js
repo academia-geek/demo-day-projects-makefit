@@ -65,7 +65,6 @@ export const deleteAsync = (id) => {
     const getCollection = collection(db, "blogEntries");
     const q = query(getCollection, where("id", "==", id));
     const getDataQuery = await getDocs(q);
-    console.log(getDataQuery);
     getDataQuery.forEach((docu) => {
       deleteDoc(doc(db, "blogEntries", docu.id));
     });

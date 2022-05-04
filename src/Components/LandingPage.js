@@ -5,12 +5,43 @@ import foodHome from "../Styles/Images/food.png";
 import foodAnalyze from "../Styles/Images/food-analyze.jpg";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 const LandingPage = () => {
     const navigate = useNavigate();
 
+    //FUNCION PARA REDIRECCIONAR LA PAGINA AL LOGIN
     const redirectionLogin = () => {
         navigate("/login");
+    }
+
+    //FUNCION PARA OBTENER DATOS DEL FORMULARIO
+    const handleContact = (e) => {
+        e.preventDefault();
+        const mailto = "jesudpf21@hotmail.com"
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const message = e.target.message.value;
+
+        //VALIDACION DE CAMPOS
+        if (name === "" || email === "" || message === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Por favor, llena todos los campos',
+            })
+        } else {
+            //ENVIO DE DATOS AL MAIL
+            window.location.href = `mailto:${mailto}?subject=${name} - ${email}&body=${message}`;
+            //ALERTA DE ENVIO CORRECTO
+            Swal.fire({
+                icon: 'success',
+                title: 'Enviado',
+                text: 'Tu mensaje ha sido enviado correctamente',
+            })
+            //RESETEAR FORMULARIO
+            e.target.reset();
+        }
     }
 
     return (
@@ -23,6 +54,7 @@ const LandingPage = () => {
 
             <div id="home" className={styles.landing_home}>
                 <motion.div
+                    className={styles.landing_home__text}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.5 }}>
@@ -36,21 +68,22 @@ const LandingPage = () => {
                     </h2>
                     <button onClick={() => redirectionLogin()}>Get Started</button>
                 </motion.div>
-                <motion.img
+                <motion.div
+                    className={styles.landing_home__img}
                     initial={{ x: 700 }}
                     animate={{ x: 0 }}
-                    transition={{ duration: 1 }}
-                    src={foodHome}
-                    alt="food" />
+                    transition={{ duration: 1 }}>
+                    <img src={foodHome} alt="" />
+                </motion.div>
             </div>
 
-            <div id="home" className={styles.landing_analyze}>
+            <div className={styles.landing_analyze}>
                 <motion.img
-                    initial={{ x: -700, opacity: 0 }}
-                    src={foodAnalyze}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1 }}
+                    src={foodAnalyze}
                     alt="food" />
                 <motion.div
                     initial={{ opacity: 0 }}
@@ -66,6 +99,29 @@ const LandingPage = () => {
                         online to recipes you’ve created yourself.
                     </h2>
                 </motion.div>
+            </div>
+
+            <div id='contact' className={styles.landing_contactForm}>
+                <form onSubmit={handleContact}>
+                    <label>Name</label>
+                    <input name="name" type="text" placeholder="Name"></input>
+
+                    <label>Email</label>
+                    <input name="email" type="email" placeholder="Email"></input>
+
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Message"></textarea>
+
+                    <button>Send</button>
+                </form>
+
+            </div>
+
+            <div id='nutitrionalInfo' className={styles.landing_nutitrionalInfo}>
+
+            </div>
+
+            <div id='footer' className={styles.landing_footer}>
 
             </div>
 

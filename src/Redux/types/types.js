@@ -18,3 +18,11 @@ export const typesLogin ={
 export const typesRegister ={
     register: 'register'
 }
+
+//Types para el CRUD de RECETAS FAVORITAS
+export const typesFavorites ={
+    add: 'add',
+    delete: 'delete',
+    list: 'list',
+    edit: 'edit'
+}

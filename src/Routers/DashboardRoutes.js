@@ -25,7 +25,7 @@ const DashboardRoutes = () => {
 					<Route path='/blog/add' element={<AddBlog />} />
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
-					<Route path='*' element={<Navigate to='/home' />} />
+					<Route path='/*' element={<Navigate to='/home' />} />
 				</Routes>
 			</div>
 		</div>
