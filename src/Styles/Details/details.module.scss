@@ -70,6 +70,34 @@
 	.details_recipe {
 		padding: 0 1rem;
 	}
+	.diet {
+		padding: 0 1rem;
+		justify-self: center;
+		& h2 {
+			margin-bottom: 1rem;
+		}
+		.diet_grid {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 1rem;
+			.diet_item {
+				height: 40px;
+				font-size: 1rem;
+				border-radius: 0.5rem;
+				display: flex;
+				gap: 0.3rem;
+				align-items: center;
+				justify-content: center;
+				color: white;
+				font-weight: 700;
+				padding: 0.5rem;
+				background-color: rgba(0, 161, 21, 0.4);
+				&.red {
+					background-color: rgba(255, 28, 28, 0.4);
+				}
+			}
+		}
+	}
 }
 
 @media only screen and (min-width: 768px) {
