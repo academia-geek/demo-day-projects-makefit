@@ -32,6 +32,7 @@ const DashboardRoutes = () => {
 					<Route path='/*' element={<Navigate to='/home' />} />
 				</Routes>
 			</div>
+			<ChatBotSpoonacular />
 		</div>
 	)
 }
