@@ -117,13 +117,13 @@ const LandingPage = () => {
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1 }}
+                        transition={{ duration: 1.5 }}
                         src={nutritionTable}
                         alt="table" />
                 </div>
                 <motion.div
                     initial={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 1.5 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     className={styles.landing_nutitrionalInfo__text}>
@@ -140,7 +140,12 @@ const LandingPage = () => {
 
             {/* SECCION DE FORMULARIO DE CONTACTO */}
             <div id='contact' className={styles.landing_contactForm}>
-                <form onSubmit={handleContact}>
+                <motion.form
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 1.5 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    onSubmit={handleContact}>
                     <h1>Contact Us</h1>
 
                     <label>Name</label>
@@ -153,7 +158,7 @@ const LandingPage = () => {
                     <textarea name="message"></textarea>
 
                     <button>Send</button>
-                </form>
+                </motion.form>
                 <div className={styles.landing_contactForm__img}>
                     <img src={contactimage} alt="contactpng" />
                 </div>
