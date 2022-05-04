@@ -10,18 +10,21 @@ export const favoriteReducers = (state = initialState, action) => {
             return {
                 favorites: [action.payload],
             };
+
+        case typesFavorites.delete:
+            return {
+                favorites: state.favorites.filter((p) => p.id !== action.payload),
+            };
+
+        case typesFavorites.list:
+            return {
+                favorites: [...action.payload],
+            };
         /* case typesFavorite.edit:
             return {
                 ...state,
             };
-        case typesFavorite.delete:
-            return {
-                favorites: state.favorites.filter((p) => p.id !== action.payload),
-            };
-        case typesFavorite.list:
-            return {
-                favorites: [...action.payload],
-            }; */
+         */
         default:
             return state;
     }

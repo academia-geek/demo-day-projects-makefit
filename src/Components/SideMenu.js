@@ -74,6 +74,11 @@ const SideMenu = () => {
                         <span>Search recipe by ingredient</span>
                     </Link>
 
+                    <Link to="/favorite-list">
+                        <i className="fa-solid fa-heart"></i>
+                        <span>Favorite list</span>
+                    </Link>
+
 
                 </div>
 
