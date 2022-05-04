@@ -8,6 +8,7 @@ import ResultsRecipes from '../Components/ResultsRecipes'
 import { AnalyzeImg } from '../Components/AnalyzeImg'
 import { DetailsRecipe } from '../Components/DetailsRecipe'
 import RecipeByIngredient from '../Components/RecipeByIngredient'
+import FavoriteList from '../Components/FavoriteList'
 
 const DashboardRoutes = () => {
 	return (
@@ -25,6 +26,7 @@ const DashboardRoutes = () => {
 					<Route path='/blog/add' element={<AddBlog />} />
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
+					<Route path='/favorite-list' element={<FavoriteList />} />
 					<Route path='/*' element={<Navigate to='/home' />} />
 				</Routes>
 			</div>

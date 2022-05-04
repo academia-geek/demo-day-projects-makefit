@@ -11,7 +11,7 @@ const reducers = combineReducers({
     login: loginReducers,
     register: registerReducers,
     posts: blogReducers,
-    favorits : favoriteReducers
+    favorites : favoriteReducers
 })
 
 export const store = createStore(

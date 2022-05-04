@@ -126,10 +126,10 @@
 }
 
 
-//estilos para el radio button
-.radio {
+//estilos para el check button
+.check {
 	input {
-		display: block;
+		display: none;
 	}
 
 	label {
@@ -146,8 +146,8 @@
 	}
 }
 
-//radio button checked
-.radio input:checked~label i {
+//check button checked
+.check input:checked~label i {
 	color: red;
 }
 
