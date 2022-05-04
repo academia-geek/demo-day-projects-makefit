@@ -7,6 +7,7 @@ import BlogSearch from '../Components/BlogSearch'
 import ResultsRecipes from '../Components/ResultsRecipes'
 import { AnalyzeImg } from '../Components/AnalyzeImg'
 import { DetailsRecipe } from '../Components/DetailsRecipe'
+import RecipeByIngredient from '../Components/RecipeByIngredient'
 
 const DashboardRoutes = () => {
 	return (
@@ -23,7 +24,8 @@ const DashboardRoutes = () => {
 					<Route path='/blog' element={<Blog />} />
 					<Route path='/blog/add' element={<AddBlog />} />
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
-					<Route path='*' element={<Navigate to='/home' />} />
+					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
+					<Route path='/*' element={<Navigate to='/home' />} />
 				</Routes>
 			</div>
 		</div>

@@ -1,0 +1,27 @@
+.instructions {
+	padding: 0 1rem;
+	.instructions_title {
+		display: flex;
+		gap: 1rem;
+		place-items: center;
+		justify-content: center;
+		margin-bottom: 2rem;
+		padding-top: 1rem;
+	}
+
+	.instructions_list {
+		display: grid;
+		gap: 1rem;
+		& li {
+			display: flex;
+			gap: 1rem;
+			font-size: 1rem;
+		}
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+	.instructions {
+		padding: 0;
+	}
+}

@@ -14,7 +14,7 @@ const  Blog = () => {
   const [editModal, setEditModal] = useState([]);
   const [admin, setAdmin] = useState(false)
 
-  const dispacth = useDispatch();
+  const dispatch = useDispatch();
   const { posts } = useSelector((state) => state.posts);
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const  Blog = () => {
 
   //eliminar post del blog
   const deletePost = (id) => {
-    dispacth(deleteAsync(id));
+    dispatch(deleteAsync(id));
   };
 
   //verificar el tipo de usuario
@@ -41,11 +41,11 @@ const  Blog = () => {
   const user = auth.currentUser;
 
   useEffect(() => {
-    dispacth(listAsync());
+    dispatch(listAsync());
     if (user.email === emailAdmin) {
       setAdmin(true)
     }
-  }, [dispacth]);
+  }, [dispatch]);
 
   return (
     <div className={styles.blog_container}>
