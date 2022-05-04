@@ -6,6 +6,9 @@ import { ListIngredients } from './ListIngredients'
 import { Spinner } from './Spinner'
 import { Instructions } from './Instructions'
 import styles from '../Styles/Details/details.module.scss'
+
+import { TypeOfDiet } from './TypeOfDiet'
+
 import { useDispatch } from 'react-redux'
 import { getAuth } from 'firebase/auth'
 import { addFavoritesAsync, deleteFavoritesAsync } from '../Redux/actions/actionFavorites'
@@ -16,6 +19,7 @@ import { useNavigate } from 'react-router-dom'
 export function DetailsRecipe() {
 	
 	const { results } = useGetDetailsRecipe()
+	console.log('🚀 ~ file: DetailsRecipe.js ~ line 15 ~ DetailsRecipe ~ results', results)
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 
@@ -24,7 +28,7 @@ export function DetailsRecipe() {
 
 	//OBTENER USUARIO AUTENTICADO
 	const auth = getAuth()
-	const user = auth.currentUser;
+	const user = auth.currentUser
 
 	//FUNCION PARA AÑADIR LA RECETA A FAVORITOS
 	const addToFavorites = () => {
@@ -64,7 +68,7 @@ export function DetailsRecipe() {
 
 	useEffect(() => {
 		probeFavorite()
-	}, [results]);
+	}, [results])
 
 	return (
 		<main className={styles.layout_recipe}>
@@ -97,6 +101,16 @@ export function DetailsRecipe() {
 							</label>
 						</div>
 					</div>
+				</div>
+			</section>
+			<section className={styles.diet}>
+				<h2>Type Of Diet</h2>
+				<div className={styles.diet_grid}>
+					<TypeOfDiet diet='Vegan' validate={results.vegan} />
+					<TypeOfDiet diet='Vegetarian' validate={results.vegetarian} />
+					<TypeOfDiet diet='Gluten Free' validate={results.glutenFree} />
+					<TypeOfDiet diet='Very Healthy' validate={results.veryHealthy} />
+					<TypeOfDiet diet='Dairy Free' validate={results.dairyFree} />
 				</div>
 			</section>
 			<section className={styles.details_recipe}>
