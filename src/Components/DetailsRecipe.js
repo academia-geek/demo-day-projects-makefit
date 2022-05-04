@@ -11,16 +11,18 @@ import { TypeOfDiet } from './TypeOfDiet'
 
 import { useDispatch } from 'react-redux'
 import { getAuth } from 'firebase/auth'
-import { addFavorites } from '../Redux/actions/actionFavorites'
+import { addFavoritesAsync, deleteFavoritesAsync } from '../Redux/actions/actionFavorites'
 import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from '../Firebase/credentials'
+import { useNavigate } from 'react-router-dom'
 
 export function DetailsRecipe() {
-	const [isFavorite, setIsFavorite] = useState(false)
+	
 	const { results } = useGetDetailsRecipe()
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 
+	const navigate = useNavigate()
 	const dispatch = useDispatch()
 
 	//OBTENER USUARIO AUTENTICADO
@@ -29,27 +31,39 @@ export function DetailsRecipe() {
 
 	//FUNCION PARA AÑADIR LA RECETA A FAVORITOS
 	const addToFavorites = () => {
-		dispatch(addFavorites(results, user))
+		const isChecked = document.getElementById("check").checked;
+		if (isChecked === true) {
+			dispatch(deleteFavoritesAsync(results.id))
+		}
+		else {
+			dispatch(addFavoritesAsync(results, user))
+		}
 	}
 
 	//FUNCION PARA SABER SI EL USUARIO YA HA AÑADIDO LA RECETA A FAVORITOS
 	const probeFavorite = async () => {
-		console.log(results.id)
 		if (results.id) {
-			const getCollection = collection(db, 'favorites')
-			const q = query(getCollection, where('recipeId', '==', results.id))
-			const getDataQuery = await getDocs(q)
-			let identifier
+			const getCollection = collection(db, "favorites");
+			const q = query(getCollection, where("recipeId", "==", results.id));
+			const getDataQuery = await getDocs(q);
+			let emailFavorite;
+			let identifier;
 			getDataQuery.forEach((doc) => {
-				identifier = doc.id
-			})
-			if (identifier) {
-				document.getElementById('radio').setAttribute('checked')
-			} else {
-				document.getElementById('radio').removeAttribute('checked')
+				identifier = doc.id;
+				emailFavorite = doc._document.data.value.mapValue.fields.user.stringValue;
+			});
+			if (identifier && (user.email === emailFavorite)) {
+				document.getElementById("check").setAttribute("checked", "true");
+			}else{
+				document.getElementById("check").removeAttribute("checked")
 			}
 		}
 	}
+
+	//FUNCION PARA VOLVER A LA PAGINA ANTERIOR
+    const backPage = () => {
+        navigate(-1);
+    }
 
 	useEffect(() => {
 		probeFavorite()
@@ -57,6 +71,10 @@ export function DetailsRecipe() {
 
 	return (
 		<main className={styles.layout_recipe}>
+			<div>
+				<button onClick={() => backPage()}>Back</button>
+			</div>
+
 			<section className={styles.head_recipe}>
 				<figure>
 					<img src={results.image} alt={results.title} />
@@ -72,10 +90,13 @@ export function DetailsRecipe() {
 							<PieChartOutlined />
 							<span className={styles.timeBox_value}>{results.servings} persons</span>
 						</div>
-						<div onClick={() => addToFavorites()} className={styles.radio}>
-							<input type='radio' className='radio' id='radio' />
-							<label htmlFor='radio'>
-								<i className='fa-solid fa-heart'></i>
+						<div className={styles.check}>
+							<input
+								type="checkbox"
+								className='check'
+								id="check"/>
+							<label htmlFor="check">
+								<i  onClick={() => addToFavorites()} className="fa-solid fa-heart"></i>
 							</label>
 						</div>
 					</div>
