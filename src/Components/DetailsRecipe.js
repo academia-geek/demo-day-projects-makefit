@@ -19,7 +19,6 @@ import { useNavigate } from 'react-router-dom'
 export function DetailsRecipe() {
 	
 	const { results } = useGetDetailsRecipe()
-	console.log('🚀 ~ file: DetailsRecipe.js ~ line 15 ~ DetailsRecipe ~ results', results)
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 
