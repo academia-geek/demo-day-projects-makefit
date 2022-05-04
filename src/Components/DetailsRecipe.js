@@ -18,7 +18,6 @@ import { db } from '../Firebase/credentials'
 export function DetailsRecipe() {
 	const [isFavorite, setIsFavorite] = useState(false)
 	const { results } = useGetDetailsRecipe()
-	console.log('🚀 ~ file: DetailsRecipe.js ~ line 15 ~ DetailsRecipe ~ results', results)
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 

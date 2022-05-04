@@ -4,7 +4,7 @@
 	display: grid;
 	gap: 4rem;
 	padding-top: 1rem;
-
+	height: 100vh;
 	.head_recipe {
 		display: grid;
 		place-items: center;
@@ -12,7 +12,7 @@
 		position: relative;
 
 		& figure {
-			width: 80%;
+			width: 60%;
 			min-height: 300px;
 			margin: 0;
 			padding: 0;
@@ -125,7 +125,6 @@
 	}
 }
 
-
 //estilos para el radio button
 .radio {
 	input {
@@ -147,11 +146,9 @@
 }
 
 //radio button checked
-.radio input:checked~label i {
+.radio input:checked ~ label i {
 	color: red;
 }
-
-
 
 /*
 #EBC340
