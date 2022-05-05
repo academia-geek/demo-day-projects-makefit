@@ -1,7 +1,6 @@
-import { Table } from 'antd'
-import useGetnutritional from '../Hooks/useGetnutritional'
-
-import styles from '../Styles/Details/nutritionalInfo.module.scss'
+import { Table } from 'antd';
+import useGetnutritional from '../Hooks/useGetnutritional';
+import styles from '../Styles/Details/nutritionalInfo.module.scss';
 
 export function NutritionalInfo() {
 	const { results, bad, good } = useGetnutritional()
@@ -38,8 +37,8 @@ export function NutritionalInfo() {
 	return (
 		<section className={styles.nutritional}>
 			<h2>Nutritional information</h2>
-			<div className='nutritionalContent'>
-				<h2>Quickview</h2>
+			<div className={styles.nutritionalContent}>
+				<h2>&#8226; Quickview</h2>
 				<div className={styles.nutritional_info}>
 					<div className={styles.nutritional_item}>
 						<h4>Calories</h4>
@@ -59,8 +58,8 @@ export function NutritionalInfo() {
 					</div>
 				</div>
 			</div>
-			<div className='nutritionalTable'>
-				<h2>Percentage of the daily need covered</h2>
+			<div className={styles.nutritionalTable}>
+				<h2>&#8226; Percentage of the daily need covered</h2>
 				<div>
 					<Table columns={columnsBad} dataSource={bad} size='middle' />
 

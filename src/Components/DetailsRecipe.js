@@ -14,7 +14,7 @@ import addToFavorites from '../Hooks/useAddFavotires'
 import { useDispatch } from 'react-redux'
 
 export function DetailsRecipe() {
-	
+
 	const { results } = useGetDetailsRecipe()
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
@@ -27,9 +27,9 @@ export function DetailsRecipe() {
 	const user = auth.currentUser
 
 	//FUNCION PARA VOLVER A LA PAGINA ANTERIOR
-    const backPage = () => {
-        navigate(-1);
-    }
+	const backPage = () => {
+		navigate(-1);
+	}
 
 	useEffect(() => {
 		probeFavorite(results, user)
@@ -37,8 +37,11 @@ export function DetailsRecipe() {
 
 	return (
 		<main className={styles.layout_recipe}>
-			<div>
-				<button onClick={() => backPage()}>Back</button>
+			<div className={styles.head_back__btn}>
+				<button onClick={() => backPage()}>
+					<i className="fa-solid fa-angle-left"></i>
+					Back...
+				</button>
 			</div>
 
 			<section className={styles.head_recipe}>
@@ -56,18 +59,19 @@ export function DetailsRecipe() {
 							<PieChartOutlined />
 							<span className={styles.timeBox_value}>{results.servings} persons</span>
 						</div>
-						<div className={styles.check}>
+						<div className={styles.timeBox}>
 							<input
 								type="checkbox"
 								className='check'
-								id="check"/>
+								id="check" />
 							<label htmlFor="check">
-								<i  onClick={() => addToFavorites(results, user, dispatch)} className="fa-solid fa-heart"></i>
+								<i onClick={() => addToFavorites(results, user, dispatch)} className="fa-solid fa-heart"></i>
 							</label>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<section className={styles.diet}>
 				<h2>Type Of Diet</h2>
 				<div className={styles.diet_grid}>

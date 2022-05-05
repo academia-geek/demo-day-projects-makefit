@@ -51,18 +51,6 @@ const SideMenu = () => {
 
                 {/* Items */}
                 <div className={styles.sidemenu_items}>
-                    <Link to="/blog">
-                        <i className="fa-solid fa-blog"></i>
-                        <span>Blog</span>
-                    </Link>
-
-                    {admin
-                        ? <Link to="/blog/add">
-                            <i className="fa-solid fa-plus"></i>
-                            <span>Add blog post</span>
-                        </Link>
-                        : null
-                    }
 
                     <Link to="/discover-recipes">
                         <i className="fa-solid fa-bowl-food"></i>
@@ -79,7 +67,18 @@ const SideMenu = () => {
                         <span>Favorite list</span>
                     </Link>
 
+                    <Link to="/blog">
+                        <i className="fa-solid fa-blog"></i>
+                        <span>Blog</span>
+                    </Link>
 
+                    {admin
+                        ? <Link to="/blog/add">
+                            <i className="fa-solid fa-plus"></i>
+                            <span>Add blog post</span>
+                        </Link>
+                        : null
+                    }
                 </div>
 
                 {/* Footer */}
