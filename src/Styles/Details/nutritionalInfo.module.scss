@@ -1,9 +1,7 @@
-/* nutritionalInfo*/
-
 .nutritional {
 	display: grid;
 	gap: 3rem;
-
+	padding: 0 150px;
 	@media (max-width: 768px) {
 		padding: 0 30px;
 	}
