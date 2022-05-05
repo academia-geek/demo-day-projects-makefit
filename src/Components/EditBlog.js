@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { editBlogEntryAsync } from "../Redux/actions/blogActions";
 import { useForm } from "../Hooks/useForm";
 import "../Styles/General/EditBlog.css";
+import styles from "../Styles/Blog/EditBlog.module.scss"
 
 const EditBlog = ({ modal, close }) => {
   const dispatch = useDispatch();
@@ -28,8 +29,8 @@ const EditBlog = ({ modal, close }) => {
   };
 
   return (
-    <div className="popUpBg">
-      <div className="popUp">
+    <div className={styles.popup_container}>
+      <div className={styles.popup}>
         <form onSubmit={handleSubmit}>
           <div>
             <label htmlFor="title">Title</label>
