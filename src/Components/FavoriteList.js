@@ -1,13 +1,15 @@
-import { ClockCircleOutlined, PieChartOutlined } from '@ant-design/icons';
 import { getAuth } from 'firebase/auth';
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { listFavoritesAsync } from '../Redux/actions/actionFavorites';
 import styles from "../Styles/Favorites/FavoriteCard.module.scss"
+import EditFavorites from './EditFavorites';
 
 const FavoriteList = () => {
     const dispatch = useDispatch();
+    const [editFavorite, setEditFavorite] = useState([]);
+    const [modal, setModal] = useState(false);
     const { favorites } = useSelector((fav) => fav.favorites);
 
     //OBTENER EL USUARIO LOGUEADO
@@ -16,6 +18,12 @@ const FavoriteList = () => {
 
     //OBTENER LOS FAVORITOS DEL USUARIO LOGUEADO
     const favoriteUser = favorites.filter((fav) => fav.user === user.email);
+
+    //EDITAR EL NOMBRE DE TU RECETA AÑADIDA A FAVORITOS
+    const editFavoriteName = (fav) => {
+        setEditFavorite(fav);
+        setModal(true);
+    }
 
     useEffect(() => {
         dispatch(listFavoritesAsync());
@@ -27,22 +35,34 @@ const FavoriteList = () => {
                 favoriteUser.map((fav, index) => {
                     return (
                         <div
-                            key={index}
-                            className={styles.favorite_card}>
+                            className={styles.favorite_card}
+                            key={index}>
                             <Link to={`/details/${fav.recipeId}`}>
-                                <img src={fav.image} alt={fav.title} />
-                                <h1>{fav.title}</h1>
-                                <div>
-                                    <p><ClockCircleOutlined />{fav.readyInMinutes} min</p>
-                                    <p><PieChartOutlined />{fav.servings} personas</p>  
+                                <div className={styles.favorite_card__img}>
+                                    <img
+                                        loading='lazy'
+                                        src={fav.image}
+                                        alt={fav.title} />
                                 </div>
                             </Link>
+                            <h1>
+                                <Link to={`/details/${fav.recipeId}`}>
+                                    {fav.title}
+                                </Link>
+                                <i
+                                    onClick={() => editFavoriteName(fav)}
+                                    className="fa-solid fa-pen-to-square">
+                                </i>
+                            </h1>
                         </div>
                     )
                 })
             }
-        </div>
+            <div style={{ width: "100%" }}>
+                {modal ? <EditFavorites favorite={editFavorite} close={setModal} /> : null}
+            </div>
+        </div >
     )
 }
 
-export default FavoriteList
+export default FavoriteList;

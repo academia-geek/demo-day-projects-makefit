@@ -20,6 +20,7 @@ const DashboardRoutes = () => {
 			<div className='dash_routes'>
 				<Routes>
 					<Route path='/home' element={<Dashboard />} />
+					<Route path='/*' element={<Navigate to='/home' />} />
 					<Route path='/image-analyzer' element={<AnalyzeImg />} />
 					<Route path='/results/:query' element={<ResultsRecipes />} />
 					<Route path='/details/:id' element={<DetailsRecipe />} />
@@ -27,9 +28,7 @@ const DashboardRoutes = () => {
 					<Route path='/blog/add' element={<AddBlog />} />
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
-					<Route path='/favorite-list' element={<FavoriteList />} />
-					<Route path='/chat' element={<ChatBotSpoonacular />} />
-					<Route path='/*' element={<Navigate to='/home' />} />
+					<Route path='/favorite-list' element={<FavoriteList />} />	
 				</Routes>
 			</div>
 			<ChatBotSpoonacular />
