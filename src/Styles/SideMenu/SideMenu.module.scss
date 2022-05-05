@@ -144,9 +144,6 @@
         }
 
         .sidemenu_footer {
-            position: absolute;
-            float: bottom;
-            bottom: 0;
             width: 100%;
             margin-bottom: 20px;
 
@@ -156,24 +153,27 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                cursor: pointer;
+                transition: 0.3s all ease-in-out;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                h1 {
+                    display: block;
+                    font-size: 18px;
+                    width: auto;
+                    color: white;
+                    margin: 0 !important;
+                    margin-left: 16px !important;
+                }
 
                 i {
                     font-size: 25px;
                     color: white;
-                    cursor: pointer;
-                }
-
-                h1 {
-                    width: auto;
-                    font-size: 18px;
-                    display: block;
-                    color: white;
-                    cursor: pointer;
-                    margin-left: 16px;
                 }
             }
-
-
         }
     }
 }
