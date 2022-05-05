@@ -9,7 +9,6 @@ import {
     updateDoc,
     where,
 } from "firebase/firestore";
-import Swal from "sweetalert2";
 import { db } from "../../Firebase/credentials";
 import { typesFavorites } from "../types/types";
 
@@ -81,5 +80,35 @@ export const listSync = (favorites) => {
     return {
         type: typesFavorites.list,
         payload: favorites,
+    };
+};
+
+
+//EDIT
+export const editFavoritesAsync = (recipeId, fav) => {
+    return async (dispatch) => {
+        const getCollection = collection(db, "favorites");
+        const q = query(getCollection, where("recipeId", "==", recipeId));
+        const getDataQuery = await getDocs(q);
+        let identifier;
+        getDataQuery.forEach((doc) => {
+            identifier = doc.id;
+        });
+        const documentRef = doc(db, "favorites", identifier);
+        await updateDoc(documentRef, fav)
+            .then(() => {
+                dispatch(editSync(fav));
+                dispatch(listFavoritesAsync());
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
+};
+
+export const editSync = (post) => {
+    return {
+        type: typesFavorites.edit,
+        payload: post,
     };
 };

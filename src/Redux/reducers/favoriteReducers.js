@@ -20,11 +20,11 @@ export const favoriteReducers = (state = initialState, action) => {
             return {
                 favorites: [...action.payload],
             };
-        /* case typesFavorite.edit:
+        case typesFavorites.edit:
             return {
                 ...state,
             };
-         */
+        
         default:
             return state;
     }
