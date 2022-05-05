@@ -12,7 +12,5 @@ export const fileUp = async (file) => {
     body: formData,
   });
   const data = await resp.json();
-  console.log(data);
-  console.log(data.secure_url);
   return data.secure_url;
 };
