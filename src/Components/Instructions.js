@@ -14,7 +14,7 @@ export function Instructions() {
 			<ol className={styles.instructions_list}>
 				{results.map((step) => (
 					<li key={step.number}>
-						<span>{step.number}</span>
+						<span>{step.number}.</span>
 						<p>{step.step} </p>
 					</li>
 				))}

@@ -1,7 +1,7 @@
 import { useGetRecipes } from '../Hooks/useGetRecipes'
 import { ListRecipes } from './ListRecipes'
 
-const Dashboard = () => {
+const DiscoverRecipes = () => {
 	const { recipes } = useGetRecipes()
 
 	return (
@@ -11,4 +11,4 @@ const Dashboard = () => {
 	)
 }
 
-export default Dashboard
+export default DiscoverRecipes;

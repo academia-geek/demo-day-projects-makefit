@@ -1,10 +1,11 @@
 .recipes_related {
 	display: grid;
 	gap: 2rem;
+	padding: 0 100px;
 	
 	h2 {
+		padding: 0 50px;
 		margin: 0;
-		padding-left: 50px ;
 		color: #080935;
 
 		@media (max-width: 768px) {

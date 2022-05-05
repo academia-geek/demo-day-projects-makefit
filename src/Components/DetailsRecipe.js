@@ -12,33 +12,36 @@ import { useNavigate } from 'react-router-dom'
 import probeFavorite from '../Hooks/useProveFavorites'
 import addToFavorites from '../Hooks/useAddFavotires'
 import { useDispatch } from 'react-redux'
+import CommentsArea from './CommentsArea'
 
 export function DetailsRecipe() {
-	
 	const { results } = useGetDetailsRecipe()
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 
-	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
 
 	//OBTENER USUARIO AUTENTICADO
 	const auth = getAuth()
 	const user = auth.currentUser
 
 	//FUNCION PARA VOLVER A LA PAGINA ANTERIOR
-    const backPage = () => {
-        navigate(-1);
-    }
+	const backPage = () => {
+		navigate(-1)
+	}
 
 	useEffect(() => {
 		probeFavorite(results, user)
-	}, [results])
+	}, [results, user])
 
 	return (
 		<main className={styles.layout_recipe}>
-			<div>
-				<button onClick={() => backPage()}>Back</button>
+			<div className={styles.head_back__btn}>
+				<button onClick={() => backPage()}>
+					<i className='fa-solid fa-angle-left'></i>
+					Back...
+				</button>
 			</div>
 
 			<section className={styles.head_recipe}>
@@ -56,18 +59,19 @@ export function DetailsRecipe() {
 							<PieChartOutlined />
 							<span className={styles.timeBox_value}>{results.servings} persons</span>
 						</div>
-						<div className={styles.check}>
-							<input
-								type="checkbox"
-								className='check'
-								id="check"/>
-							<label htmlFor="check">
-								<i  onClick={() => addToFavorites(results, user, dispatch)} className="fa-solid fa-heart"></i>
+						<div className={styles.timeBox}>
+							<input type='checkbox' className='check' id='check' />
+							<label htmlFor='check'>
+								<i
+									onClick={() => addToFavorites(results, user, dispatch)}
+									className='fa-solid fa-heart'
+								></i>
 							</label>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<section className={styles.diet}>
 				<h2>Type Of Diet</h2>
 				<div className={styles.diet_grid}>
@@ -84,6 +88,9 @@ export function DetailsRecipe() {
 			</section>
 			<section className={styles.layout_nutritional} ref={fromRef}>
 				<Suspense fallback={<Spinner />}>{isNearScreen ? <NutritionalInfo /> : null}</Suspense>
+			</section>
+			<section className={styles.detail_comments}>
+				<CommentsArea />
 			</section>
 		</main>
 	)

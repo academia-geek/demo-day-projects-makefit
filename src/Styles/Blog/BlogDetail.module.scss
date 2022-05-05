@@ -1,0 +1,26 @@
+.blogdetail_container {
+  width: 100%;
+  .blogdetail_card {
+    width: 50%;
+    margin: 30px auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.22);
+    .blogdetail_card__video {
+        width: 100%;
+        video {
+            width: 100%;
+        }
+    }
+    .blogdetail_card__body {
+      padding: 0 12px;
+    }
+    .blogdetail_card__footer {
+      width: 100%;
+      padding: 10px 12px;
+      span {
+        padding: 5px 15px;
+        border-radius: 20px;
+        background-color: #fed400a6;
+      }
+    }
+  }
+}
