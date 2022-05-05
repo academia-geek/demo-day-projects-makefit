@@ -61,9 +61,11 @@ const  Blog = () => {
 
       <div key={"hola"} className={styles.blog_entries}>
         {posts.map((post) => (
-          <div key={post.id} className={styles.blog_card}>
+          <div key={post.id} className={styles.blog_card} onClick={
+            () => navigate(`/blog/detail/${post.id}`)
+          }>
             <div>
-              <video src={post.video} controls></video>
+              <video src={post.video}></video>
               <div className={styles.blog_card__text}>
                 <h1>{post.title}</h1>
                 <p>Descripción: {post.description}</p>
