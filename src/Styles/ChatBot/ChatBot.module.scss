@@ -21,7 +21,7 @@
     align-items: center;
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: #fed400;
     padding: 0 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -39,7 +39,8 @@
       width: 40px;
       height: 40px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #fff;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -48,7 +49,8 @@
       font-size: large;
 
       &:hover {
-        background-color: #d9d7d7;
+        background-color: #ff0000;
+        border-color: #ff0000;
         color: #fff;
       }
 
@@ -105,6 +107,7 @@
       border: none;
       padding: 0 5px;
       width: 100%;
+      border-top: 1px solid #fed400;
       &:focus {
         outline: none;
       }
@@ -112,6 +115,9 @@
     .chatbot_footer__button {
       height: 40px;
       padding: 0 10px;
+      background-color: #fed400;
+      border: 1px solid #fed400;
+      cursor: pointer;
     }
   }
 }
