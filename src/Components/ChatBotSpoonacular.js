@@ -105,7 +105,7 @@ function ChatBotSpoonacular() {
             placeholder="chat with bot"
           ></input>
           <button className={styles.chatbot_footer__button} type="submit">
-            <i class="fa-solid fa-share"></i>
+            <i className="fa-solid fa-share"></i>
           </button>
         </form>
       </div>
