@@ -1,12 +1,14 @@
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
-import React, { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import LandingPage from '../Components/LandingPage'
-import Login from '../Components/Login'
-import Register from '../Components/Register'
-import DashboardRoutes from './DashboardRoutes'
-import PrivateRoutes from './PrivateRoutes'
-import PublicRoutes from './PublicRoutes'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import LandingPage from '../Components/LandingPage';
+import Login from '../Components/Login';
+import Register from '../Components/Register';
+import DashboardRoutes from './DashboardRoutes';
+import PrivateRoutes from './PrivateRoutes';
+import PublicRoutes from './PublicRoutes';
+import loadcenter from "../Styles/Images/Recipes.gif";
+import loadbottom from "../Styles/Images/loading_recipes.gif";
 
 const AppRouters = () => {
 	const [checking, setChecking] = useState(true)
@@ -24,12 +26,21 @@ const AppRouters = () => {
 			}
 			setTimeout(function () {
 				setChecking(false)
-			}, 1000)
+			}, 1500)
 		})
 	}, [setIsLoggedIn, setChecking])
 
 	if (checking) {
-		return <h1>Espere...</h1>
+		return (
+			<div className='loading_container'>
+				<div className='loading_center__img'>
+					<img src={loadcenter} alt='loading' />
+				</div>
+				<div className='loading_bottom__img'>
+					<img src={loadbottom} alt='loading' />
+				</div>
+			</div>
+		)
 	}
 
 	return (

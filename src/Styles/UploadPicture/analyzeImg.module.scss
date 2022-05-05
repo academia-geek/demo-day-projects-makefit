@@ -1,11 +1,13 @@
 .upload_main {
 	display: grid;
 	gap: 4rem;
-	& h1 {
+	max-width: 1200px;
+	h1 {
 		text-align: center;
 		padding: 0 1rem;
 		margin: 0;
 		margin-top: 1rem;
+		color: #080935;
 	}
 }
 
@@ -14,12 +16,15 @@
 	display: grid;
 	gap: 2rem;
 	place-items: center;
+
 	& figure {
 		width: 80%;
 		margin: 0;
 	}
+
 	.upload_container {
 		position: relative;
+
 		.upload_wrapper {
 			position: relative;
 			border: 2px dashed #aaa;
@@ -29,13 +34,16 @@
 			height: 180px;
 			display: grid;
 			place-items: center;
+
 			& svg {
 				fill: #aaa;
 				height: 36%;
 			}
+
 			.file_preview {
 				height: 100px;
 				width: 100px;
+
 				.help_text {
 					color: #aaa;
 					text-align: center;
@@ -46,6 +54,7 @@
 				}
 			}
 		}
+
 		.file_input {
 			position: absolute;
 			top: 0;
@@ -58,6 +67,7 @@
 			z-index: 10;
 			cursor: pointer;
 		}
+
 		.file_preview__img {
 			width: 180px;
 			position: absolute;
@@ -68,6 +78,7 @@
 			z-index: 1;
 			padding: 0.4rem;
 			margin: 0;
+
 			& img {
 				object-fit: cover;
 				width: 100%;
@@ -80,11 +91,13 @@
 @media only screen and (min-width: 768px) {
 	.upload {
 		grid-template-columns: repeat(2, 1fr);
+
 		& figure {
 			width: 400px;
 		}
 	}
 }
+
 @media only screen and (min-width: 1024px) {
 	.upload {
 		& figure {

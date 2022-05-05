@@ -3,7 +3,9 @@
   flex-direction: column;
   align-items: center;
   width: 30%;
-  height: 60%;
+  height: 400px;
+  max-width: 400px;
+  min-width: 300px;
   background-color: #f5f5f5;
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -19,7 +21,7 @@
     align-items: center;
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: #fed400;
     padding: 0 20px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     position: relative;
@@ -37,7 +39,8 @@
       width: 40px;
       height: 40px;
       border-radius: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid #fff;
+      color: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -46,7 +49,8 @@
       font-size: large;
 
       &:hover {
-        background-color: #d9d7d7;
+        background-color: #ff0000;
+        border-color: #ff0000;
         color: #fff;
       }
 
@@ -59,14 +63,61 @@
     }
   }
 
+  .chatbot_body {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    p {
+      font-weight: 600;
+      span {
+        font-weight: normal;
+      }
+    }
+    .chatbot_body__cardscontainer {
+      width: 100%;
+      cursor: pointer;
+      text-align: center;
+      padding: 5px 0;
+      .chatbot_body__cardscontainer___card {
+        margin: 5px auto 10px auto;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        h4 {
+          text-align: left;
+        }
+        img {
+          width: 70%;
+        }
+      }
+    }
+  }
+
   .chatbot_footer {
     width: 100%;
-    position: absolute;
     bottom: 0;
     left: 0;
-
+    display: flex;
     .chatbot_footer__input {
-      width: 94.5%;
+      height: 40px;
+      border: none;
+      padding: 0 5px;
+      width: 100%;
+      border-top: 1px solid #fed400;
+      &:focus {
+        outline: none;
+      }
+    }
+    .chatbot_footer__button {
+      height: 40px;
+      padding: 0 10px;
+      background-color: #fed400;
+      border: 1px solid #fed400;
+      cursor: pointer;
     }
   }
 }
