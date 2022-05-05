@@ -9,6 +9,7 @@ import { AnalyzeImg } from '../Components/AnalyzeImg'
 import { DetailsRecipe } from '../Components/DetailsRecipe'
 import RecipeByIngredient from '../Components/RecipeByIngredient'
 import FavoriteList from '../Components/FavoriteList'
+import ChatBotSpoonacular from '../Components/ChatBotSpoonacular'
 
 const DashboardRoutes = () => {
 	return (
@@ -27,9 +28,11 @@ const DashboardRoutes = () => {
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
 					<Route path='/favorite-list' element={<FavoriteList />} />
+					<Route path='/chat' element={<ChatBotSpoonacular />} />
 					<Route path='/*' element={<Navigate to='/home' />} />
 				</Routes>
 			</div>
+			<ChatBotSpoonacular />
 		</div>
 	)
 }
