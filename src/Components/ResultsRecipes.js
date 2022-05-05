@@ -3,7 +3,7 @@ import { ListRecipes } from './ListRecipes'
 
 const ResultsRecipes = () => {
 	const { results } = useGetResults()
-
+	console.log(results)
 	return (
 		<>
 			<ListRecipes recipes={results} />

@@ -26,16 +26,15 @@ const AddBlog = () => {
     console.log(file);
     Swal.fire({
       icon: "warning",
-      title: "Espere mientras carga la imagen",
+      title: "Espere mientras carga el video",
       showConfirmButton: false,
-      timer: 1500,
     });
     fileUp(file)
       .then((result) => {
         videoCloud = result;
         Swal.fire({
           icon: "success",
-          title: "Imagen cargada correctamente",
+          title: "Video cargado correctamente",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -80,7 +79,7 @@ const AddBlog = () => {
             resetForm();
             Swal.fire({
               icon: "success",
-              title: "Producto agregado correctamente",
+              title: "Entrada al blog agregada correctamente",
               showConfirmButton: false,
               timer: 1500,
             });

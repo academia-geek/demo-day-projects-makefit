@@ -3,7 +3,19 @@
 .nutritional {
 	display: grid;
 	gap: 3rem;
-	padding: 0 0.5rem;
+
+	h2 {
+		width: 100%;
+		padding-left: 50px;
+		margin: 0;
+		color: #080935;
+
+		@media (max-width: 768px) {
+			text-align: center;
+			padding: 0;
+		}
+	}
+
 	.nutritional_info {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -21,11 +33,17 @@
 		display: grid;
 		place-items: center;
 		color: #fff;
-		background-color: rgb(17, 46, 46);
+		border: 10px solid #080935;
+		background-color: transparent;
 		box-shadow: rgb(0 0 0 / 25%) 0px 0.0625em 0.0625em, rgb(0 0 0 / 25%) 0px 0.125em 0.5em,
 			rgb(255 255 255 / 10%) 0px 0px 0px 1px inset;
-		& h4 {
-			color: inherit;
+
+		h4 {
+			color: #080935;
+		}
+
+		span {
+			color: #080935;
 		}
 	}
 }
