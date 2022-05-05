@@ -15,7 +15,7 @@ function ChatBotSpoonacular() {
     if (message === "/help") {
       setBot({
         answerText: `To see a little bit list of recipes with some ingredient, type your [ingredient];
-        To see a list of recipes to prepare a [food], type your [food]; To see a trivia, type [Tell me food trivia]; 
+        To see a list of recipes to prepare some food, type your [food]; To see a trivia, type [Tell me food trivia]; 
         To see a food fact, type [Tell me a food fact]; To see a recomendation of wine to a specific food, type Which wine should I drink with [food];
         To find a substitute for some food, type How to substitute [food] or What is a substitute for [food];`,
       });
@@ -45,7 +45,7 @@ function ChatBotSpoonacular() {
   }, [modal]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();    
+    e.preventDefault();
     setMessage(e.target.message.value);
     e.target.reset();
   };
@@ -64,7 +64,7 @@ function ChatBotSpoonacular() {
     <div>
       <div className={styles.chatbot_container} id="chatbot">
         <div className={styles.chatbot_header}>
-          <p className={styles.chatbot_header__title}>Chat</p>
+          <p className={styles.chatbot_header__title}>FAQBOT</p>
           <i
             id="close"
             className={`fa-solid fa-xmark ${styles.chatbot_header__close}`}
@@ -74,7 +74,11 @@ function ChatBotSpoonacular() {
         <div id="bot" className={styles.chatbot_body}>
           <p>
             {bot.answerText ? "Bot: " : ""}
-            <span>{bot.answerText}</span>
+            <span>
+              {bot.answerText.split(";").map((item, index) => (
+                <p key={index}>{item !== "" ? "- " +item: null}</p>
+              ))}
+            </span>
           </p>
           <div className={styles.chatbot_body__cardscontainer}>
             {bot.media?.map((media) => {
