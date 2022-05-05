@@ -45,10 +45,9 @@ function ChatBotSpoonacular() {
   }, [modal]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-
+    e.preventDefault();    
     setMessage(e.target.message.value);
+    e.target.reset();
   };
   const navigateDetail = (id) => {
     navigate(`/details/${id}`);
