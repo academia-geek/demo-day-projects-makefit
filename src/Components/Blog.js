@@ -2,14 +2,14 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { deleteAsync, listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 import styles from "../Styles/Blog/Blog.module.scss";
 import { getAuth } from "firebase/auth";
 import { emailAdmin } from "../utils/emailAdmin";
 
-const  Blog = () => {
+const Blog = () => {
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState([]);
   const [admin, setAdmin] = useState(false)
@@ -61,30 +61,35 @@ const  Blog = () => {
 
       <div key={"hola"} className={styles.blog_entries}>
         {posts.map((post) => (
-          <div key={post.id} className={styles.blog_card} onClick={
-            () => navigate(`/blog/detail/${post.id}`)
-          }>
-            <div>
-              <video src={post.video}></video>
-              <div className={styles.blog_card__text}>
-                <h1>{post.title}</h1>
-                <p>Descripción: {post.description}</p>
-                <p>Categoria: {post.category}</p>
+
+          <div key={post.id} className={styles.blog_card}>
+            <Link
+              to={`/blog/detail/${post.id}`}
+              style={{ textDecoration: "none", color: "inherit" }}>
+              <div>
+                <video src={post.video}></video>
+                <div className={styles.blog_card__text}>
+                  <h1>{post.title}</h1>
+                  <p>&#8226; <strong>Descripción:</strong> {post.description}</p>
+                  <p>&#8226; <strong>Categoria:</strong> {post.category}</p>
+                </div>
               </div>
-              {
-                admin
-                  ? <div className={styles.blog_btn}>
-                    <button onClick={() => edit(post)}>Edit</button>
-                    <button onClick={() => deletePost(post.id)}>Delete</button>
-                  </div>
-                  : null
-              }
-            </div>
+            </Link>
+            {
+              admin
+                ? <div className={styles.blog_btn
+                } >
+                  <button onClick={() => edit(post)}>Edit</button>
+                  <button onClick={() => deletePost(post.id)}>Delete</button>
+                </div>
+                : null
+            }
           </div>
-        ))}
-      </div>
+        ))
+        }
+      </div >
       {modal === true ? <EditBlog modal={editModal} close={setModal} /> : ""}
-    </div>
+    </div >
   );
 }
 

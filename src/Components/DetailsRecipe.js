@@ -1,18 +1,18 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
-import { ClockCircleOutlined, PieChartOutlined } from '@ant-design/icons'
-import useGetDetailsRecipe from '../Hooks/useGetDetailsRecipe'
-import { useIntersectionObserver } from '../Hooks/useIntersectionObserver'
-import { ListIngredients } from './ListIngredients'
-import { Spinner } from './Spinner'
-import { Instructions } from './Instructions'
-import styles from '../Styles/Details/details.module.scss'
-import { TypeOfDiet } from './TypeOfDiet'
-import { getAuth } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
-import probeFavorite from '../Hooks/useProveFavorites'
-import addToFavorites from '../Hooks/useAddFavotires'
-import { useDispatch } from 'react-redux'
-import CommentsArea from './CommentsArea'
+import { lazy, Suspense, useEffect } from 'react';
+import { ClockCircleOutlined, PieChartOutlined } from '@ant-design/icons';
+import useGetDetailsRecipe from '../Hooks/useGetDetailsRecipe';
+import { useIntersectionObserver } from '../Hooks/useIntersectionObserver';
+import { ListIngredients } from './ListIngredients';
+import { Spinner } from './Spinner';
+import { Instructions } from './Instructions';
+import styles from '../Styles/Details/details.module.scss';
+import { TypeOfDiet } from './TypeOfDiet';
+import { getAuth } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import probeFavorite from '../Hooks/useProveFavorites';
+import addToFavorites from '../Hooks/useAddFavotires';
+import { useDispatch } from 'react-redux';
+import CommentsArea from './CommentsArea';
 
 export function DetailsRecipe() {
 	const { results } = useGetDetailsRecipe()
