@@ -10,6 +10,7 @@ import RecipeByIngredient from '../Components/RecipeByIngredient';
 import FavoriteList from '../Components/FavoriteList';
 import ChatBotSpoonacular from '../Components/ChatBotSpoonacular';
 import DiscoverRecipes from '../Components/DiscoverRecipes';
+import BlogDetail from '../Components/BlogDetail';
 
 const DashboardRoutes = () => {
 	return (
@@ -29,6 +30,7 @@ const DashboardRoutes = () => {
 					<Route path='/blog/search/:search' element={<BlogSearch />} />
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
 					<Route path='/favorite-list' element={<FavoriteList />} />
+					<Route path='/blog/detail/:id' element={<BlogDetail />} />
 				</Routes>
 			</div>
 			<ChatBotSpoonacular />

@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import AddBlog from '../Components/AddBlog';
 import { AnalyzeImg } from '../Components/AnalyzeImg';
 import Blog from '../Components/Blog';
+import BlogDetail from '../Components/BlogDetail';
 import BlogSearch from '../Components/BlogSearch';
 import ChatBotSpoonacular from '../Components/ChatBotSpoonacular';
 import FavoriteList from '../Components/FavoriteList';
@@ -31,6 +32,7 @@ const AdminRoutes = () => {
                     <Route path='/image-analyzer' element={<AnalyzeImg />} />
                     <Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
                     <Route path='/favorite-list' element={<FavoriteList />} />
+                    <Route path='/blog/detail/:id' element={<BlogDetail />} />
                 </Routes>
             </div>
             <ChatBotSpoonacular />

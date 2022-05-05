@@ -9,7 +9,7 @@ import styles from "../Styles/Blog/Blog.module.scss";
 import { getAuth } from "firebase/auth";
 import { emailAdmin } from "../utils/emailAdmin";
 
-const  Blog = () => {
+const Blog = () => {
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState([]);
   const [admin, setAdmin] = useState(false)
@@ -68,8 +68,8 @@ const  Blog = () => {
               <video src={post.video}></video>
               <div className={styles.blog_card__text}>
                 <h1>{post.title}</h1>
-                <p>Descripción: {post.description}</p>
-                <p>Categoria: {post.category}</p>
+                <p>&#8226; <strong>Descripción:</strong> {post.description}</p>
+                <p>&#8226; <strong>Categoria:</strong> {post.category}</p>
               </div>
               {
                 admin
