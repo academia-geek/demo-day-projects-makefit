@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom'
 import probeFavorite from '../Hooks/useProveFavorites'
 import addToFavorites from '../Hooks/useAddFavotires'
 import { useDispatch } from 'react-redux'
+import CommentsArea from './CommentsArea'
 
 export function DetailsRecipe() {
 
@@ -88,6 +89,9 @@ export function DetailsRecipe() {
 			</section>
 			<section className={styles.layout_nutritional} ref={fromRef}>
 				<Suspense fallback={<Spinner />}>{isNearScreen ? <NutritionalInfo /> : null}</Suspense>
+			</section>
+			<section className={styles.detail_comments}>
+				<CommentsArea/>
 			</section>
 		</main>
 	)

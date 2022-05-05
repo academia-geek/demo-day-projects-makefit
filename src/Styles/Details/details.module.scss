@@ -198,6 +198,16 @@
 	color: red;
 }
 
+
+//Estilos de la seccion de comentarios
+.detail_comments{
+	width: 100%;
+	padding: 40px 200px 80px 200px ;
+
+	@media (max-width: 1000px) {
+		padding: 20px 20px;
+	}
+}
 /*
 #EBC340
 #474A53
