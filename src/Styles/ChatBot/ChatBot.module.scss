@@ -70,16 +70,16 @@
     padding: 10px;
     p {
       font-weight: 600;
-      span {
+      p {
         font-weight: normal;
       }
     }
     .chatbot_body__cardscontainer {
       width: 100%;
-      cursor: pointer;
       text-align: center;
       padding: 5px 0;
       .chatbot_body__cardscontainer___card {
+        cursor: pointer;
         margin: 5px auto 10px auto;
         &:first-child {
           margin-top: 0;
