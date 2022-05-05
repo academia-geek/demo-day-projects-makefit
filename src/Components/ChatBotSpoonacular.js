@@ -6,11 +6,22 @@ import styles from "../Styles/ChatBot/ChatBot.module.scss";
 
 function ChatBotSpoonacular() {
   const [message, setMessage] = useState("");
-  const [bot, setBot] = useState({});
+  const [bot, setBot] = useState({
+    answerText: "Type /help to see the list of commands",
+  });
   const [modal, setModal] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
-    if (message !== "") {
+    if (message === "/help") {
+      setBot({
+        answerText: `To see a little bit list of recipes with some ingredient, type your [ingredient];
+        To see a list of recipes to prepare a [food], type your [food]; To see a trivia, type [Tell me food trivia]; 
+        To see a food fact, type [Tell me a food fact]; To see a recomendation of wine to a specific food, type Which wine should I drink with [food];
+        To find a substitute for some food, type How to substitute [food] or What is a substitute for [food];`,
+      });
+
+      console.log(bot);
+    } else if (message !== "") {
       getData(`${apiChatBot}${message}`)
         .then((data) => {
           console.log(data);
@@ -18,6 +29,7 @@ function ChatBotSpoonacular() {
         })
         .catch((err) => console.log(err));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [message]);
 
   useEffect(() => {
@@ -34,7 +46,7 @@ function ChatBotSpoonacular() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(apiChatBot + e.target.message.value);
+    e.target.reset();
 
     setMessage(e.target.message.value);
   };
@@ -53,32 +65,27 @@ function ChatBotSpoonacular() {
     <div>
       <div className={styles.chatbot_container} id="chatbot">
         <div className={styles.chatbot_header}>
-          <p className={styles.chatbot_header__title}>Tittle</p>
+          <p className={styles.chatbot_header__title}>Chat</p>
           <i
             id="close"
             className={`fa-solid fa-xmark ${styles.chatbot_header__close}`}
             onClick={handleClose}
           ></i>
         </div>
-        <form onSubmit={handleSubmit} className={styles.chatbot_footer}>
-          <input
-            className={styles.chatbot_footer__input}
-            name="message"
-            placeholder="chat with bot"
-          ></input>
-          <button type="submit">Send</button>
-        </form>
-        <div id="bot">
+        <div id="bot" className={styles.chatbot_body}>
           <p>
             {bot.answerText ? "Bot: " : ""}
             <span>{bot.answerText}</span>
           </p>
-          <div>
+          <div className={styles.chatbot_body__cardscontainer}>
             {bot.media?.map((media) => {
               const id =
                 media.link.split("-")[media.link.split("-").length - 1];
               return (
-                <div key={id}>
+                <div
+                  key={id}
+                  className={styles.chatbot_body__cardscontainer___card}
+                >
                   <h4 onClick={() => navigateDetail(id)}>{media.title}</h4>
                   <img
                     src={media.image}
@@ -91,6 +98,16 @@ function ChatBotSpoonacular() {
             })}
           </div>
         </div>
+        <form onSubmit={handleSubmit} className={styles.chatbot_footer}>
+          <input
+            className={styles.chatbot_footer__input}
+            name="message"
+            placeholder="chat with bot"
+          ></input>
+          <button className={styles.chatbot_footer__button} type="submit">
+            <i class="fa-solid fa-share"></i>
+          </button>
+        </form>
       </div>
       <div
         id="open-chat"
