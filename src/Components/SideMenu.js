@@ -51,6 +51,22 @@ const SideMenu = () => {
 
                 {/* Items */}
                 <div className={styles.sidemenu_items}>
+
+                    <Link to="/discover-recipes">
+                        <i className="fa-solid fa-bowl-food"></i>
+                        <span>Discover recipes</span>
+                    </Link>
+
+                    <Link to="/recipe-by-ingredient">
+                        <i className="fa-solid fa-carrot"></i>
+                        <span>Search recipe by ingredient</span>
+                    </Link>
+
+                    <Link to="/favorite-list">
+                        <i className="fa-solid fa-heart"></i>
+                        <span>Favorite list</span>
+                    </Link>
+
                     <Link to="/blog">
                         <i className="fa-solid fa-blog"></i>
                         <span>Blog</span>
@@ -63,23 +79,6 @@ const SideMenu = () => {
                         </Link>
                         : null
                     }
-
-                    <Link to="/image-analyzer">
-                        <i className="fa-solid fa-image"></i>
-                        <span>Search recipe by image</span>
-                    </Link>
-
-                    <Link to="/recipe-by-ingredient">
-                        <i className="fa-solid fa-bowl-food"></i>
-                        <span>Search recipe by ingredient</span>
-                    </Link>
-
-                    <Link to="/favorite-list">
-                        <i className="fa-solid fa-heart"></i>
-                        <span>Favorite list</span>
-                    </Link>
-
-
                 </div>
 
                 {/* Footer */}

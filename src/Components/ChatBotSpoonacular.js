@@ -76,7 +76,7 @@ function ChatBotSpoonacular() {
             {bot.answerText ? "Bot: " : ""}
             <span>
               {bot.answerText.split(";").map((item, index) => (
-                <p key={index}>{item !== "" ? "- " +item: null}</p>
+                <span key={index}>{item !== "" ? "- " +item: null}</span>
               ))}
             </span>
           </div>

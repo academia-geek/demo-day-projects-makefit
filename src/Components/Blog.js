@@ -54,7 +54,7 @@ const  Blog = () => {
         <input
           type="text"
           name="search"
-          placeholder="Ingresa tu búsqueda en el blog"
+          placeholder="Search for a blog post..."
         />
         <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
       </form>
