@@ -13,42 +13,43 @@ export function AnalysisResults({ data = {}, haveData, loading, error }) {
 				haveData ? (
 					<>
 						<section className={stylesDetails.nutritional}>
-
 							<h2>Nutrition profile of the average
 								<strong> {data.category.name}</strong>
 							</h2>
 
-							<div className={stylesDetails.nutritional_info}>
-
-								<div className={stylesDetails.nutritional_item}>
-									<h4>Calories</h4>
-									<span>{data.nutrition.calories.value}</span>
+							<div className={stylesDetails.nutritionalContent}>
+								<div className={stylesDetails.nutritional_info}>
+								
+									<div className={stylesDetails.nutritional_item}>
+										<h4>Calories</h4>
+										<span>{data.nutrition.calories.value}</span>
+									</div>
+								
+									<div className={stylesDetails.nutritional_item}>
+										<h4>carbs</h4>
+										<span>
+											{data.nutrition.carbs.value}
+											{data.nutrition.carbs.unit}
+										</span>
+									</div>
+								
+									<div className={stylesDetails.nutritional_item}>
+										<h4>Total Fat</h4>
+										<span>
+											{data.nutrition.fat.value}
+											{data.nutrition.fat.unit}
+										</span>
+									</div>
+								
+									<div className={stylesDetails.nutritional_item}>
+										<h4>proteins</h4>
+										<span>
+											{data.nutrition.protein.value}
+											{data.nutrition.protein.unit}
+										</span>
+									</div>
+								
 								</div>
-
-								<div className={stylesDetails.nutritional_item}>
-									<h4>carbs</h4>
-									<span>
-										{data.nutrition.carbs.value}
-										{data.nutrition.carbs.unit}
-									</span>
-								</div>
-
-								<div className={stylesDetails.nutritional_item}>
-									<h4>Total Fat</h4>
-									<span>
-										{data.nutrition.fat.value}
-										{data.nutrition.fat.unit}
-									</span>
-								</div>
-
-								<div className={stylesDetails.nutritional_item}>
-									<h4>proteins</h4>
-									<span>
-										{data.nutrition.protein.value}
-										{data.nutrition.protein.unit}
-									</span>
-								</div>
-
 							</div>
 						</section>
 
