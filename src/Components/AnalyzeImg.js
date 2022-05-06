@@ -8,7 +8,11 @@ export function AnalyzeImg() {
 
 	return (
 		<main className={styles.upload_main}>
-			<h1>Upload a food picture and see what happens...</h1>
+			<h1>Upload a photo or image of your favorite food dish and see what happens...</h1>
+			<p>
+				let the MakeFit food analyzer generate and expose healthy recipe variants that match the
+				analyzed image, while teaching the nutritional values that it includes.
+			</p>
 			<UploadPicture getPicture={getPicture} picture={picture}>
 				<AnalysisResults data={results} haveData={haveData} loading={loading} error={error} />
 			</UploadPicture>
