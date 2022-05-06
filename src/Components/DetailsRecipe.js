@@ -15,13 +15,12 @@ import { useDispatch } from 'react-redux';
 import CommentsArea from './CommentsArea';
 
 export function DetailsRecipe() {
-
 	const { results } = useGetDetailsRecipe()
 	const { isNearScreen, fromRef } = useIntersectionObserver()
 	const NutritionalInfo = lazy(() => import('./NutritionalInfo'))
 
-	const navigate = useNavigate();
-	const dispatch = useDispatch();
+	const navigate = useNavigate()
+	const dispatch = useDispatch()
 
 	//OBTENER USUARIO AUTENTICADO
 	const auth = getAuth()
@@ -29,18 +28,18 @@ export function DetailsRecipe() {
 
 	//FUNCION PARA VOLVER A LA PAGINA ANTERIOR
 	const backPage = () => {
-		navigate(-1);
+		navigate(-1)
 	}
 
 	useEffect(() => {
 		probeFavorite(results, user)
-	}, [results])
+	}, [results, user])
 
 	return (
 		<main className={styles.layout_recipe}>
 			<div className={styles.head_back__btn}>
 				<button onClick={() => backPage()}>
-					<i className="fa-solid fa-angle-left"></i>
+					<i className='fa-solid fa-angle-left'></i>
 					Back...
 				</button>
 			</div>
@@ -61,12 +60,12 @@ export function DetailsRecipe() {
 							<span className={styles.timeBox_value}>{results.servings} persons</span>
 						</div>
 						<div className={styles.timeBox}>
-							<input
-								type="checkbox"
-								className='check'
-								id="check" />
-							<label htmlFor="check">
-								<i onClick={() => addToFavorites(results, user, dispatch)} className="fa-solid fa-heart"></i>
+							<input type='checkbox' className='check' id='check' />
+							<label htmlFor='check'>
+								<i
+									onClick={() => addToFavorites(results, user, dispatch)}
+									className='fa-solid fa-heart'
+								></i>
 							</label>
 						</div>
 					</div>
@@ -91,7 +90,7 @@ export function DetailsRecipe() {
 				<Suspense fallback={<Spinner />}>{isNearScreen ? <NutritionalInfo /> : null}</Suspense>
 			</section>
 			<section className={styles.detail_comments}>
-				<CommentsArea/>
+				<CommentsArea />
 			</section>
 		</main>
 	)
