@@ -1,13 +1,20 @@
 .upload_main {
 	display: grid;
 	gap: 4rem;
-
+	max-width: 1200px;
 	h1 {
 		text-align: center;
 		padding: 0 1rem;
 		margin: 0;
 		margin-top: 1rem;
 		color: #080935;
+	}
+	p {
+		text-align: center;
+		font-size: 1.2rem;
+		word-break: break-word;
+		max-width: 500px;
+		justify-self: center;
 	}
 }
 

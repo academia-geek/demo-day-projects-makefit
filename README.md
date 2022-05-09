@@ -3,7 +3,9 @@
 
 # Resumen
 
-MakeFit es una aplicación web que tiene como objetivo brindarles a los usuarios la libertad de encontrar y disfrutar de buenas recetas saludables, al tiempo que brinda confianza en la solidez de las recetas y el aporte nutricional que estas brindan. En general, MakeFit brinda un entorno más dinámico en el que las recetas se puedan compartir al proporcionar la función de búsqueda y resaltar las recetas más destacadas del momento para que las personas comunes y con poco conocimiento culinario, sean parte del mundo gastronómico.
+MakeFit es una aplicación web que tiene como objetivo brindarles a las personas la libertad de descubrir y disfrutar, variantes de receta saludables de sus alimentos favoritos, como la pizza o la hamburguesa, y exponer los valores nutricionales y aportes calóricos de los mismos, al tiempo que brinda la confianza y solidez de las recetas expuestas.
+
+Gracias a las diversas opciones de búsqueda de recetas que se ofrecen dentro de la aplicación, las personas pueden divertirse explorando y descubriendo las mejores recetas saludables para su próxima comida, e iniciar así, un nuevo estilo de vida más sano.
 
 ## 🧾 Features
 
