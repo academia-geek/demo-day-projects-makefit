@@ -26,16 +26,19 @@ const Login = () => {
     const handleSubmit = (values) => {
         localStorage.setItem('email', values.email)
         dispatch(loginEmailPassAsync(values.email, values.password))
+        localStorage.setItem('provider', values.password)
     }
 
     //funcion para iniciar sesion con google
     const handleGoogle = () => {
         dispatch(loginGoogle())
+        localStorage.setItem('provider', 'google')
     }
 
     //funcion para iniciar sesion con facebook
     const handleFacebook = () => {
         dispatch(loginFacebook())
+        localStorage.setItem('provider', 'facebook')
     }
 
     return (
@@ -97,6 +100,11 @@ const Login = () => {
                                             </div>
                                         ) : null}
                                     </div>
+
+                                    <h3>
+                                        Restore your password
+                                        <Link to="/restorepass"><button>Restore</button></Link>
+                                    </h3>
 
                                     <button className={styles.login_continue__btn} type="submit">
                                         Login

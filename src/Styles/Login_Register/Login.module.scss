@@ -118,6 +118,32 @@
                 }
             }
 
+            h3 {
+                font-size: 14px;
+                margin-top: 16px;
+                font-weight: 400;
+
+                a {
+                    margin-left: 10px;
+                    color: #080935;
+                    text-decoration: none;
+
+                    button {
+                        border: none;
+                        text-decoration: underline;
+                        cursor: pointer;
+                        transition: 0.3s all ease-in-out;
+                        font-size: 14px;
+                        font-weight: 500;
+                        background-color: transparent;
+
+                        &:hover {
+                            transform: scale(1.03);
+                        }
+                    }
+                }
+            }
+
             .login_continue__btn {
                 width: 100%;
                 margin-top: 16px;

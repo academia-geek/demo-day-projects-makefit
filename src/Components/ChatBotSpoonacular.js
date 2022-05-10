@@ -73,12 +73,12 @@ function ChatBotSpoonacular() {
         </div>
         <div id="bot" className={styles.chatbot_body}>
           <div>
-            <p>
+            <div>
               {bot.answerText ? "Bot: " : ""}
               {bot.answerText.split(";").map((item, index) => (
                 <p key={index}>{item !== "" ? "- " + item : null}</p>
               ))}
-            </p>
+            </div>
           </div>
           <div className={styles.chatbot_body__cardscontainer}>
             {bot.media?.map((media) => {
