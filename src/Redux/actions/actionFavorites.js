@@ -51,6 +51,7 @@ export const deleteFavoritesAsync = (resultsId) => {
             deleteDoc(doc(db, "favorites", docu.id));
         });
         dispatch(deleteSync(resultsId));
+        listFavoritesAsync();
     };
 };
 
