@@ -126,20 +126,13 @@
                 a {
                     margin-left: 10px;
                     color: #080935;
-                    text-decoration: none;
+                    text-decoration: underline;
+                    font-size: 14px;
+                    font-weight: 500;
+                    transition: 0.3s all ease-in-out;
 
-                    button {
-                        border: none;
-                        text-decoration: underline;
-                        cursor: pointer;
-                        transition: 0.3s all ease-in-out;
-                        font-size: 14px;
-                        font-weight: 500;
-                        background-color: transparent;
-
-                        &:hover {
-                            transform: scale(1.03);
-                        }
+                    &:hover {
+                        transform: scale(1.03);
                     }
                 }
             }

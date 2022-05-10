@@ -103,7 +103,7 @@ const Login = () => {
 
                                     <h3>
                                         Restore your password
-                                        <Link to="/restorepass"><button>Restore</button></Link>
+                                        <Link to="/restorepass">Restore.</Link>
                                     </h3>
 
                                     <button className={styles.login_continue__btn} type="submit">
