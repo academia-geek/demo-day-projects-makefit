@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { deleteAsync, listAsync } from "../Redux/actions/blogActions";
 import EditBlog from "./EditBlog";
 import styles from "../Styles/Blog/Blog.module.scss";
 import { getAuth } from "firebase/auth";
 import { emailAdmin } from "../utils/emailAdmin";
 
-const  BlogSearch = () => {
+const BlogSearch = () => {
   const dispatch = useDispatch();
   const [modal, setModal] = useState(false);
   const [editModal, setEditModal] = useState([]);
-  const [admin, setAdmin] = useState(false)
+  const [admin, setAdmin] = useState(false);
 
   const { posts } = useSelector((state) => state.posts);
   const navigate = useNavigate();
@@ -41,13 +41,13 @@ const  BlogSearch = () => {
   );
 
   //verificar el tipo de usuario
-  const auth = getAuth()
+  const auth = getAuth();
   const user = auth.currentUser;
 
   useEffect(() => {
     dispatch(listAsync());
     if (user.email === emailAdmin) {
-      setAdmin(true)
+      setAdmin(true);
     }
   }, [dispatch]);
 
@@ -59,7 +59,9 @@ const  BlogSearch = () => {
           name="search"
           placeholder="Search for a blog post.."
         />
-        <button type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit">
+          <i className="fa-solid fa-magnifying-glass"></i>
+        </button>
       </form>
 
       <div className={styles.blog_entries}>
@@ -67,21 +69,29 @@ const  BlogSearch = () => {
           postsFiltered.map((post) => {
             return (
               <div key={post.id} className={styles.blog_card}>
-                <div>
-                  <video src={post.video} width="320" height="240" controls></video>
-                  <div className={styles.blog_card__text}>
-                    <h1>{post.title}</h1>
-                    <p>{post.description}</p>
-                    <p>{post.category}</p>
+                <Link
+                  to={`/blog/detail/${post.id}`}
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <div>
+                    <video
+                      src={post.video}
+                      width="320"
+                      height="240"
+                    ></video>
+                    <div className={styles.blog_card__text}>
+                      <h1>{post.title}</h1>
+                      <p>{post.description}</p>
+                      <span>{post.category}</span>
+                    </div>
                   </div>
-                </div>
-                {admin
-                  ? <div className={styles.blog_btn}>
+                </Link>
+                {admin ? (
+                  <div className={styles.blog_btn}>
                     <button onClick={() => edit(post)}>Edit</button>
                     <button onClick={() => deletePost(post.id)}>Delete</button>
                   </div>
-                  : null
-                }
+                ) : null}
               </div>
             );
           })
@@ -93,6 +103,6 @@ const  BlogSearch = () => {
       {modal === true ? <EditBlog modal={editModal} close={setModal} /> : ""}
     </div>
   );
-}
+};
 
 export default BlogSearch;
