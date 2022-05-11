@@ -31,7 +31,7 @@
         .login_ilustration {
             width: 500px;
             margin: 0 20px;
-            
+
 
             @media (max-width: 950px) {
                 width: 400px;
@@ -44,6 +44,7 @@
             img {
                 width: 100%;
                 margin-left: -18px !important;
+
                 @media (max-width: 500px) {
                     margin-left: 0px !important;
                 }
@@ -161,28 +162,45 @@
 
         .login_social__btn {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
+            border-top: 2px solid #bebebe;
+            margin-top: 16px;
 
             button {
                 margin-top: 16px;
-                width: 100%;
+                width: 45%;
                 height: 40px;
                 border-radius: 15px;
                 border: none;
-                background-color: #fed400;
                 color: white;
                 font-size: 16px;
                 font-weight: bold;
                 cursor: pointer;
                 transition: 0.3s all ease-in-out;
 
+
+            }
+
+            .login_social__google {
+                background-color: #db4a39;
+
                 &:hover {
-                    transform: scale(1.02);
+                    transform: scale(1.01);
                     background-color: transparent;
-                    color: #fed400;
-                    border: 2px solid #fed400;
+                    color: #db4a39;
+                    border: 2px solid #db4a39;
+                }
+            }
+
+            .login_social__facebook {
+                background-color: #3b5998;
+
+                &:hover {
+                    transform: scale(1.01);
+                    background-color: transparent;
+                    color: #3b5998;
+                    border: 2px solid #3b5998;
                 }
             }
         }

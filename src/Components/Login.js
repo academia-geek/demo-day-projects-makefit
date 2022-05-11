@@ -116,11 +116,11 @@ const Login = () => {
                     </div>
 
                     <div className={styles.login_social__btn}>
-                        <button onClick={handleGoogle}   >
+                        <button onClick={handleGoogle}  className={styles.login_social__google} >
                             <i className="fa-brands fa-google"></i>
                         </button>
 
-                        <button onClick={handleFacebook} >
+                        <button onClick={handleFacebook} className={styles.login_social__facebook}>
                             <i className="fa-brands fa-facebook"></i>
                         </button>
                     </div>
