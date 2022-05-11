@@ -4,7 +4,7 @@ import { apiKey } from "../utils/apiUrls";
 import { getData } from "../utils/getData";
 import CardRecipe from "./CardRecipe";
 import styles from "../Styles/SearchIngredient/SearchIngredient.module.scss";
-import Logo from "../Styles/Images/logo-yellow.png";
+import searchIllustration from "../Styles/Images/search-illustration.png";
 import styles2 from '../Styles/Dashboard/Dashboard.module.scss';
 
 function RecipeByIngredient() {
@@ -41,7 +41,7 @@ function RecipeByIngredient() {
           </div>
           :
           <div className={styles.norecipe_container}>
-            <img src={Logo} alt="logoMakeFit" />
+            <img src={searchIllustration} alt="logoMakeFit" />
             <h1>
               This page allows you to search for your favorite
               recipe by individual ingredients. Write in the search

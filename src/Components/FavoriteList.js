@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { listFavoritesAsync } from '../Redux/actions/actionFavorites';
 import styles from "../Styles/Favorites/FavoriteCard.module.scss"
 import EditFavorites from './EditFavorites';
-import Logo from "../Styles/Images/logo-yellow.png";
+import favoriteIllustration from "../Styles/Images/favorite-illustration.png";
 
 const FavoriteList = () => {
     const dispatch = useDispatch();
@@ -66,7 +66,7 @@ const FavoriteList = () => {
                     })
                     :
                     <div className={styles.norecipe_container}>
-                        <img src={Logo} alt="logoMakeFit" />
+                        <img src={favoriteIllustration} alt="logoMakeFit" />
                         <h1>
                             This page allows you to save your recipes
                             in favorites. Just tap on the heart that
