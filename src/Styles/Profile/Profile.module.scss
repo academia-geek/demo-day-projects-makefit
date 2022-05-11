@@ -1,0 +1,319 @@
+.profile_container {
+    width: 100%;
+    height: 100vh;
+    padding: 50px;
+
+    @media (max-width: 768px) {
+        padding: 50px 15px !important;
+    }
+
+    .profile_img__name {
+        border-radius: 8px;
+        padding: 10px 5px;
+        display: flex;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+
+            @media (max-width: 768px) {
+                margin: auto;
+                margin-bottom: 10px;
+            }
+        }
+
+        .profile_img__text {
+            margin-left: 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            @media (max-width: 768px) {
+                margin: 0;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 26px;
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                color: #080935;
+                margin: 0;
+
+                @media (max-width: 768px) {
+                    font-size: 18px;
+                    flex-wrap: wrap;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                button {
+                    font-size: 14px;
+                    background-color: transparent;
+                    border: none;
+                    color: #080935;
+                    cursor: pointer;
+                    margin-left: 16px;
+                    transition: 0.2s all ease-in-out;
+
+                    @media (max-width: 768px) {
+                        margin-left: 16px;
+                    }
+
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+                }
+            }
+
+            .profile_name__form {
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin: 0 !important;
+                    height: 40px;
+                    border-radius: 8px;
+                    width: 200px;
+                    border: 1px solid #bebebe;
+                    padding: 16px;
+                }
+
+                button {
+                    margin-left: 16px;
+                    border: none;
+                    background-color: transparent;
+                    cursor: pointer;
+                    display: flex;
+
+                    i {
+                        color: #080935;
+                        font-size: 26px;
+                    }
+                }
+            }
+
+            h2 {
+                font-size: 14px;
+                font-weight: 400;
+                margin: 0;
+                margin-top: 10px;
+                color: #080935;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .profile_email {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+
+        .profile_verified__email {
+            background-color: #fed400;
+            border-radius: 10px;
+            width: 100%;
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            @media (max-width: 768px) {
+                justify-content: space-around;
+            }
+
+            @media (max-width: 560px) {
+                flex-direction: column;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 16px;
+                display: flex;
+                align-items: center;
+                color: #080935;
+
+                i {
+                    font-size: 18px;
+                    margin-right: 10px;
+                    color: #080935;
+                }
+            }
+
+            button {
+                border: none;
+                background-color: #3dc795;
+                width: 180px;
+                height: 40px;
+                border-radius: 8px;
+                font-weight: bold;
+                color: #fff;
+                cursor: pointer;
+                transition: 0.2s all ease-in-out;
+                @media (max-width: 560px) {
+                    margin-top: 10px;
+                }
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #080935;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 400;
+            color: #080935;
+
+            button {
+                font-size: 14px;
+                background-color: transparent;
+                border: none;
+                color: #080935;
+                cursor: pointer;
+                margin-left: 16px;
+                transition: 0.2s all ease-in-out;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .profile_actualizar__email {
+            display: flex;
+            align-items: center;
+
+            input {
+                height: 40px;
+                border-radius: 8px;
+                width: 250px;
+                border: 1px solid #bebebe;
+                padding: 16px;
+            }
+
+            button {
+                margin-left: 16px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                display: flex;
+
+                i {
+                    color: #080935;
+                    font-size: 26px;
+                }
+            }
+        }
+    }
+
+    .profile_password {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            color: #080935;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-top: 10px;
+            font-weight: 400;
+            color: #080935;
+        }
+
+        input {
+            height: 40px;
+            border-radius: 8px;
+            width: 200px;
+            border: 1px solid #bebebe;
+            padding: 16px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
+            background-color: #3dc795;
+            border: none;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            i {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    .profile_delete__btn {
+        margin-top: 20px;
+        padding: 10px;
+
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            width: 200px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.2s all ease-in-out;
+            background-color: #c73d3d;
+            border: none;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.40);
+            border: 2px solid #c73d3d;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}

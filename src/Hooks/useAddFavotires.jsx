@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import { addFavoritesAsync, deleteFavoritesAsync } from "../Redux/actions/actionFavorites";
 
 //FUNCION PARA AÑADIR O ELIMINAR LA RECETA DE FAVORITOS

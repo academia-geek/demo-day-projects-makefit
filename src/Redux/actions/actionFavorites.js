@@ -21,7 +21,7 @@ export const addFavoritesAsync = (results, user) => {
         servings: results.servings,
         image: results.image,
         recipeId: results.id,
-        user: user.email,
+        userId: user.uid,
     }
 
     return async (dispatch) => {

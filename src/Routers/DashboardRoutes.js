@@ -11,6 +11,7 @@ import FavoriteList from '../Components/FavoriteList';
 import ChatBotSpoonacular from '../Components/ChatBotSpoonacular';
 import DiscoverRecipes from '../Components/DiscoverRecipes';
 import BlogDetail from '../Components/BlogDetail';
+import Profile from '../Components/Profile';
 
 const DashboardRoutes = () => {
 	return (
@@ -31,6 +32,7 @@ const DashboardRoutes = () => {
 					<Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
 					<Route path='/favorite-list' element={<FavoriteList />} />
 					<Route path='/blog/detail/:id' element={<BlogDetail />} />
+					<Route path='/profile' element={<Profile />} />
 				</Routes>
 			</div>
 			<ChatBotSpoonacular />

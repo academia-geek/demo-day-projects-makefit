@@ -9,6 +9,7 @@ import PrivateRoutes from './PrivateRoutes';
 import PublicRoutes from './PublicRoutes';
 import loadcenter from "../Styles/Images/Recipes.gif";
 import loadbottom from "../Styles/Images/loading_recipes.gif";
+import RestorePass from '../Components/RestorePass';
 
 const AppRouters = () => {
 	const [checking, setChecking] = useState(true)
@@ -69,6 +70,15 @@ const AppRouters = () => {
 					element={
 						<PublicRoutes isAuth={isLoggedIn}>
 							<Register />
+						</PublicRoutes>
+					}
+				/>
+
+				<Route
+					path='/restorepass'
+					element={
+						<PublicRoutes isAuth={isLoggedIn}>
+							<RestorePass />
 						</PublicRoutes>
 					}
 				/>

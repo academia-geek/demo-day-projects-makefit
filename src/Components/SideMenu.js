@@ -44,10 +44,12 @@ const SideMenu = () => {
 
 
                 {/* Profile */}
-                <div className={styles.sidemenu_profile}>
-                    <img src={gravatar} alt="perfil" />
-                    <h1>{user.email}</h1>
-                </div>
+                <Link to="/profile" className={styles.sidemenu_profile}>
+                    <div className={styles.sidemenu_profile}>
+                        <img src={gravatar} alt="perfil" />
+                        <h1>{user.displayName}</h1>
+                    </div>
+                </Link>
 
                 {/* Items */}
                 <div className={styles.sidemenu_items}>

@@ -18,7 +18,7 @@ const FavoriteList = () => {
     const user = auth.currentUser;
 
     //OBTENER LOS FAVORITOS DEL USUARIO LOGUEADO
-    const favoriteUser = favorites.filter((fav) => fav.user === user.email);
+    const favoriteUser = favorites.filter((fav) => fav.userId === user.uid);
 
     //EDITAR EL NOMBRE DE TU RECETA AÑADIDA A FAVORITOS
     const editFavoriteName = (fav) => {

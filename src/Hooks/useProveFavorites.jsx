@@ -7,13 +7,15 @@ const probeFavorite = async (results, user) => {
         const getCollection = collection(db, "favorites");
         const q = query(getCollection, where("recipeId", "==", results.id));
         const getDataQuery = await getDocs(q);
-        let emailFavorite;
+        let idFavorite;
         let identifier;
         getDataQuery.forEach((doc) => {
             identifier = doc.id;
-            emailFavorite = doc._document.data.value.mapValue.fields.user.stringValue;
+            idFavorite = doc._document.data.value.mapValue.fields.userId.stringValue;
         });
-        if (identifier && (user.email === emailFavorite)) {
+        
+        console.log(user);
+        if (identifier && (user.uid === idFavorite)) {
             document.getElementById("check").setAttribute("checked", "true");
         }else{
             document.getElementById("check").removeAttribute("checked")
