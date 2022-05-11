@@ -7,13 +7,10 @@ import BlogDetail from '../Components/BlogDetail';
 import BlogSearch from '../Components/BlogSearch';
 import ChatBotSpoonacular from '../Components/ChatBotSpoonacular';
 import FavoriteList from '../Components/FavoriteList';
-import PruebaAdmin from '../Components/PruebaAdmin';
+import Profile from '../Components/Profile';
 import RecipeByIngredient from '../Components/RecipeByIngredient';
 import ResultsRecipes from '../Components/ResultsRecipes';
 import SideMenu from '../Components/SideMenu';
-
-
-
 
 const AdminRoutes = () => {
     return (
@@ -23,7 +20,7 @@ const AdminRoutes = () => {
             </div>
             <div className='dash_routes'>
                 <Routes>
-                    <Route path="/home" element={<PruebaAdmin />} />
+                    <Route path="/home" element={<Profile />} />
                     <Route path="/*" element={<Navigate to="/home" />} />
                     <Route path='/results/:query' element={<ResultsRecipes />} />
                     <Route path='/blog' element={<Blog />} />
@@ -33,6 +30,7 @@ const AdminRoutes = () => {
                     <Route path='/recipe-by-ingredient' element={<RecipeByIngredient />} />
                     <Route path='/favorite-list' element={<FavoriteList />} />
                     <Route path='/blog/detail/:id' element={<BlogDetail />} />
+                    <Route path='/profile' element={<Profile />} />
                 </Routes>
             </div>
             <ChatBotSpoonacular />
