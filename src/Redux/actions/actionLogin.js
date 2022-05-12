@@ -16,7 +16,7 @@ export const logoutAsync = () => {
             .catch(error => {
                 Swal.fire(
                     'Error',
-                    'No se pudo cerrar sesión',
+                    'Could not sign out',
                     'error'
                 )
             })
@@ -39,7 +39,7 @@ export const loginGoogle = () => {
             .catch(error => {
                 Swal.fire(
                     'Error',
-                    'Este email ya fue registrado, por favor intente con una cuenta de Google diferente',
+                    'This email has already been registered, please try a different Google account',
                     'error'
                 )
             })
@@ -57,7 +57,7 @@ export const loginFacebook = () => {
             .catch(error => {
                 Swal.fire(
                     'Error',
-                    'Este email ya fue registrado, por favor intente con una cuenta de Facebook diferente',
+                    'This email has already been registered, please try a different Facebook account',
                     'error'
                 )
             })
@@ -77,7 +77,7 @@ export const loginEmailPassAsync = (email, password) => {
             .catch(error => {
                 Swal.fire(
                     'Error',
-                    'Usuario existente o contraseña incorrecta',
+                    'Existing username or wrong password',
                     'error'
                 )
             })

@@ -31,7 +31,7 @@ const LandingPage = () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Oops...',
-                text: 'Por favor, llena todos los campos',
+                text: 'Please fill in all the fields',
             })
         } else {
             //ENVIO DE DATOS AL MAIL
@@ -40,7 +40,7 @@ const LandingPage = () => {
             Swal.fire({
                 icon: 'success',
                 title: 'Enviado',
-                text: 'Tu mensaje ha sido enviado correctamente',
+                text: 'Your message has been sent successfully',
             })
             //RESETEAR FORMULARIO
             e.target.reset();

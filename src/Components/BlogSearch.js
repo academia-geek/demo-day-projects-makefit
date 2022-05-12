@@ -86,7 +86,7 @@ const  BlogSearch = () => {
             );
           })
         ) : (
-          <h1>No hay resultados</h1>
+          <h1>No results found</h1>
         )}
       </div>
 

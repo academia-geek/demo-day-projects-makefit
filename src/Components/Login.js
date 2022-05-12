@@ -10,12 +10,12 @@ import loginImg from "../Styles/Images/loginimg.png";
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string()
-        .email('Ingrese un correo válido')
-        .required('Este campo es obligatorio'),
+        .email('Enter a valid email')
+        .required('This field is required'),
     password: Yup.string()
-        .min(6, 'La contraseña debe tener al menos 6 caracteres')
-        .max(50, 'La contraseña debe tener como máximo 50 caracteres')
-        .required('Este campo es obligatorio'),
+        .min(6, 'The password must be at least 6 characters')
+        .max(50, 'The password must have a maximum of 50 characters')
+        .required('This field is required'),
 });
 
 const Login = () => {
@@ -92,7 +92,7 @@ const Login = () => {
                                     </div>
 
                                     <div className={styles.login_form__inputs}>
-                                        <label>Contraseña</label>
+                                        <label>Password</label>
                                         <Field name="password" type="password" autoComplete="off" />
                                         {errors.password && touched.password ? (
                                             <div className={styles.login_error}>

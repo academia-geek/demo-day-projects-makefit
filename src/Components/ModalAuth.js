@@ -51,7 +51,7 @@ const ModalAuth = ({ close, user, password, provider, isDelete, email, setemail,
                 .catch(() => {
                     Swal.fire({
                         title: "Error",
-                        text: "La contraseña ingresada es incorrecta",
+                        text: "The entered password is wrong",
                         icon: "error",
                     })
                     handleClose()

@@ -70,8 +70,6 @@ const Blog = () => {
                 <video src={post.video}></video>
                 <div className={styles.blog_card__text}>
                   <h1>{post.title}</h1>
-                  {/* <p>&#8226; <strong>Descripción:</strong> {post.description}</p> */}
-                  {/* <p>&#8226; <strong>Categoria:</strong> {post.category}</p> */}
                   <span className={styles.blog_card__text___category}>{post.category}</span>
                 </div>
               </div>

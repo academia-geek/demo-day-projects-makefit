@@ -11,19 +11,19 @@ import loginImg from "../Styles/Images/loginimg.png";
 //validaciones de cada input
 const SignupSchema = Yup.object().shape({
     nombre: Yup.string()
-        .min(3, 'El nombre debe tener al menos 2 caracteres')
-        .max(50, 'El nombre debe tener como máximo 50 caracteres')
-        .required('Este campo es obligatorio'),
+        .min(3, 'The name must have at least 2 characters')
+        .max(50, 'The name must have a maximum of 50 characters')
+        .required('This field is required'),
     email: Yup.string()
-        .email('Ingrese un correo válido')
-        .required('Este campo es obligatorio'),
+        .email('Enter a valid email')
+        .required('This field is required'),
     password: Yup.string()
-        .min(6, 'La contraseña debe tener al menos 6 caracteres')
-        .max(50, 'La contraseña debe tener como máximo 50 caracteres')
-        .required('Este campo es obligatorio'),
+        .min(6, 'The password must be at least 6 characters')
+        .max(50, 'The password must have a maximum of 50 characters')
+        .required('This field is required'),
     pass2: Yup.string()
-        .oneOf([Yup.ref('password'), null], 'Las contraseñas no coinciden')
-        .required('Este campo es obligatorio'),
+        .oneOf([Yup.ref('password'), null], 'Passwords do not match')
+        .required('This field is required'),
 });
 
 
@@ -97,7 +97,7 @@ const Register = () => {
                                     </div>
 
                                     <div className={styles.login_form__inputs}>
-                                        <label>Contraseña</label>
+                                        <label>Password</label>
                                         <Field name="password" type="password" autoComplete="off" />
                                         {errors.password && touched.password ? (
                                             <div className={styles.login_error}>
@@ -107,7 +107,7 @@ const Register = () => {
                                     </div >
 
                                     <div className={styles.login_form__inputs}>
-                                        <label>Vuelva a escribir la contraseña</label>
+                                        <label>Enter the password again</label>
                                         <Field name="pass2" type="password" autoComplete="off" />
                                         {errors.pass2 && touched.pass2 ? (
                                             <div className={styles.login_error}>

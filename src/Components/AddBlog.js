@@ -26,7 +26,7 @@ const AddBlog = () => {
     console.log(file);
     Swal.fire({
       icon: "warning",
-      title: "Espere mientras carga el video",
+      title: "Please, wait while the video loads",
       showConfirmButton: false,
     });
     fileUp(file)
@@ -34,7 +34,7 @@ const AddBlog = () => {
         videoCloud = result;
         Swal.fire({
           icon: "success",
-          title: "Video cargado correctamente",
+          title: "Video uploaded successfully",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -46,17 +46,17 @@ const AddBlog = () => {
 
   const AddSchema = Yup.object().shape({
     title: Yup.string()
-      .min(6, "Título debe tener más de 6 caracteres")
+      .min(6, "The title must have more than 6 characters")
       .required("Title is required"),
     description: Yup.string()
-      .min(6, "Descripción debe tener más de 6 caracteres")
+      .min(6, "Description must be longer than 6 characters")
       .required("Description is required"),
     video: Yup.string().optional("Video is optional"),
     category: Yup.string().required("Category is required"),
   });
   return (
     <div className={styles.add_container}>
-      <h1>Agregar entrada al blog</h1>
+      <h1>Add blog entry</h1>
       <Formik
         initialValues={{
           title: "",
@@ -115,7 +115,7 @@ const AddBlog = () => {
 
             <div className={styles.add_input}>
               <label className={styles.add_input__label} htmlFor="video">
-                <i className="fa-solid fa-upload"></i>Cargar video
+                <i className="fa-solid fa-upload"></i>Upload video
               </label>
               <Field
                 className={styles.add_input__none}

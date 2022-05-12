@@ -9,8 +9,8 @@ import Swal from 'sweetalert2';
 
 const SignupSchema = Yup.object().shape({
     email: Yup.string()
-        .email('Ingrese un correo válido')
-        .required('Este campo es obligatorio'),
+        .email('Enter a valid email')
+        .required('This field is required'),
 });
 
 const RestorePass = () => {
