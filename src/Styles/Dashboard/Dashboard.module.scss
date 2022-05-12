@@ -79,7 +79,7 @@
 //Estilos de las cartas
 .dash_card__container {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 	flex-wrap: wrap;
 
@@ -113,6 +113,7 @@
 				color: #080935;
 				width: 90%;
 				margin-top: 8px;
+				min-height: 50px;
 			}
 		}
 

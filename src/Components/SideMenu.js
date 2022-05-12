@@ -48,7 +48,7 @@ const SideMenu = () => {
                     <div className={styles.sidemenu_profile}>
                         <img src={gravatar} alt="perfil" />
                         <h1>
-                            <i class="fa-solid fa-user"></i>
+                            <i className="fa-solid fa-user"></i>
                             {user.displayName}
                         </h1>
                     </div>

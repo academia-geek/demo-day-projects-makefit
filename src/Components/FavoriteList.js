@@ -52,15 +52,17 @@ const FavoriteList = () => {
                                             alt={fav.title} />
                                     </div>
                                 </Link>
-                                <h1>
-                                    <Link to={`/details/${fav.recipeId}`}>
-                                        {fav.title}
-                                    </Link>
-                                    <i
-                                        onClick={() => editFavoriteName(fav)}
-                                        className="fa-solid fa-pen-to-square">
-                                    </i>
-                                </h1>
+                                <div className={styles.favorite_card__text}>
+                                    <h1>
+                                        <Link to={`/details/${fav.recipeId}`}>
+                                            {fav.title}
+                                        </Link>
+                                        <i
+                                            onClick={() => editFavoriteName(fav)}
+                                            className="fa-solid fa-pen-to-square">
+                                        </i>
+                                    </h1>
+                                </div>
                             </div>
                         )
                     })

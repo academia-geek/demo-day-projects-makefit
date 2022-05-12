@@ -1,0 +1,35 @@
+.load_more {
+    height: 40px;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: none;
+        background-color: #3dc795;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s all ease-in-out;
+        outline: none;
+
+        &:hover {
+            background-color: transparent;
+            color: #3dc795;
+            border: 2px solid #3dc795;
+        }
+    }
+
+    span {
+        font-size: 22px;
+        color: #080935;
+        font-weight: bold;
+        margin: 0px 15px;
+    }
+}

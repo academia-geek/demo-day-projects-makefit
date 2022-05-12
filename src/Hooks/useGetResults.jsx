@@ -5,14 +5,20 @@ import { apiKey, recipesUrl } from '../utils/apiUrls'
 
 export function useGetResults() {
 	const [results, setResults] = useState([])
+	const [page, setPage] = useState(0)
 	const { query } = useParams()
-	const url = `${recipesUrl}?addRecipeNutrition=true&query=${query}&number=10&&offset=0&apiKey=${apiKey}`
+	const url = `${recipesUrl}?addRecipeNutrition=true&query=${query}&number=8&&offset=${page}&apiKey=${apiKey}`
 
 	useEffect(() => {
-		getData(url)
-			.then((data) => setResults(data.results))
-			.catch((error) => console.error(error))
-	}, [url])
 
-	return { results }
+		getData(url)
+			.then((data) => {
+				/* console.log(url);
+				console.log(data); */
+				setResults(data.results)
+			})
+			.catch((error) => console.error(error))
+	}, [page, url])
+
+	return { results, setPage, page }
 }

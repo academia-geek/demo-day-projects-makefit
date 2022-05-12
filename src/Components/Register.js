@@ -77,7 +77,7 @@ const Register = () => {
                             {({ errors, touched }) => (
                                 <Form>
                                     <div className={styles.login_form__inputs}>
-                                        <label>Nombre</label>
+                                        <label>Name</label>
                                         <Field name="nombre" type="text" />
                                         {errors.nombre && touched.nombre ? (
                                             <div className={styles.login_error}>
