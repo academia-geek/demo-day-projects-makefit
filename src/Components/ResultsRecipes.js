@@ -1,6 +1,6 @@
-import { useGetResults } from '../Hooks/useGetResults'
-import { ListRecipes } from './ListRecipes'
-import styles from "../Styles/General/LoadMore.module.scss"
+import { useGetResults } from '../Hooks/useGetResults';
+import { ListRecipes } from './ListRecipes';
+import styles from "../Styles/General/LoadMore.module.scss";
 
 const ResultsRecipes = () => {
 	const { setPage, page, results } = useGetResults()
@@ -20,13 +20,12 @@ const ResultsRecipes = () => {
 				<button onClick={() => handleLoadLess()}>
 					<i className="fa-solid fa-angles-left"></i>
 				</button>
-				<span>{page/8}</span>
+				<span>{(page / 8) + 1}</span>
 				<button onClick={() => handleLoadMore()}>
 					<i className="fa-solid fa-angles-right"></i>
 				</button>
-
 			</div>
 		</div>
 	)
 }
-export default ResultsRecipes
+export default ResultsRecipes;

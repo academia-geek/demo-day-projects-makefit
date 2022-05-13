@@ -13,7 +13,7 @@ export function ListRecipes({ recipes }) {
 				</figure>
 				<SearchRecipes />
 			</div>
-			
+
 			{/* Lista de recetas */}
 			<section className={styles.dash_meals}>
 				<CardRecipe recipes={recipes} />

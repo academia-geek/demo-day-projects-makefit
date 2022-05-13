@@ -4,10 +4,12 @@ import { randomRecipes } from '../utils/apiUrls'
 
 export function useGetRecipes() {
 	const [recipes, setRecipes] = useState([])
+	const [loading, setLoading] = useState(1)
+
 	useEffect(() => {
 		getData(randomRecipes)
 			.then((data) => setRecipes(data.recipes))
 			.catch((error) => console.error(error))
-	}, [])
-	return { recipes }
+	}, [loading])
+	return { recipes, loading, setLoading }
 }

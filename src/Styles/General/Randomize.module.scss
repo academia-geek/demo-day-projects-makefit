@@ -1,0 +1,45 @@
+.randomize_container {
+    .randomize_btn {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
+        button {
+            margin-top: 16px;
+            margin-right: 100px;
+            padding: 0 10px;
+            width: auto;
+            height: 40px;
+            border: none;
+            background-color: #3dc795;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media (max-width: 768px) {
+                margin-right: 0px;
+            }
+
+            i {
+                margin-right: 10px;
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: #3dc795;
+                border: 2px solid #3dc795;
+                transform: scale(1.02);
+            }
+        }
+    }
+}

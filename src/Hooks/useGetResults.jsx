@@ -13,8 +13,6 @@ export function useGetResults() {
 
 		getData(url)
 			.then((data) => {
-				/* console.log(url);
-				console.log(data); */
 				setResults(data.results)
 			})
 			.catch((error) => console.error(error))

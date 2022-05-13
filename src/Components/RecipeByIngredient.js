@@ -5,11 +5,11 @@ import { getData } from "../utils/getData";
 import CardRecipe from "./CardRecipe";
 import styles from "../Styles/SearchIngredient/SearchIngredient.module.scss";
 import searchIllustration from "../Styles/Images/search-illustration.png";
-import styles2 from '../Styles/Dashboard/Dashboard.module.scss';
 
 function RecipeByIngredient() {
   const [ingredients, setIngredients] = useState("");
   const [recipes, setRecipes] = useState([]);
+  const [more, setMore] = useState(8);
   const urlApi = "https://api.spoonacular.com/recipes/findByIngredients?ingredients=";
 
   const handleSubmit = (e) => {
@@ -19,11 +19,11 @@ function RecipeByIngredient() {
 
   useEffect(() => {
     if (ingredients !== "") {
-      getData(urlApi + ingredients + `&apiKey=${apiKey}`).then((data) => {
+      getData(urlApi + ingredients + `&number=${more}` + `&apiKey=${apiKey}`).then((data) => {
         setRecipes(data);
       });
     }
-  }, [ingredients]);
+  }, [ingredients, more]);
 
   return (
     <div className={styles.searchIngredient_container}>
@@ -36,8 +36,14 @@ function RecipeByIngredient() {
       {
         recipes.length > 0
           ?
-          <div className={styles2.CardRecipe}>
+          <div className={styles.cardrecipe_container}>
             <CardRecipe recipes={recipes}></CardRecipe>
+            <div className={styles.cardrecipe_more__btn}>
+              <button onClick={() => setMore(more + 8)}>
+                <i className="fa-solid fa-plus"></i>
+                Load more
+              </button>
+            </div>
           </div>
           :
           <div className={styles.norecipe_container}>

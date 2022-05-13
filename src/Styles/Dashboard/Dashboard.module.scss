@@ -16,9 +16,11 @@
 		figure {
 			display: flex;
 			justify-content: center;
+			margin-left: 15px;
+			margin-right: 15px;
 
 			img {
-				width: 500px;
+				width: 400px;
 
 				@media (max-width: 650px) {
 					width: 90%;
@@ -27,6 +29,7 @@
 		}
 
 		.search_container {
+			margin: 0 15px;
 			@media (max-width: 650px) {
 				width: 90%;
 			}
@@ -72,7 +75,7 @@
 	}
 
 	.dash_meals {
-		padding: 30px 0px;
+		padding: 10px 0px;
 	}
 }
 

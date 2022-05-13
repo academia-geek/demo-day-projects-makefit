@@ -14,7 +14,9 @@ const CardRecipe = ({ recipes }) => {
 							<div className={styles.dash_card__img}>
 								<img
 									loading='lazy'
-									src={recipe.image}
+									src={recipe.image 
+										? recipe.image 
+										: "https://artsmidnorthcoast.com/wp-content/uploads/2014/05/no-image-available-icon-6.png"}
 									alt={recipe.title} />
 								<h1>{recipe.title}</h1>
 							</div>

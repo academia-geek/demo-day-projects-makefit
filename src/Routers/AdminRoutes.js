@@ -6,6 +6,7 @@ import Blog from '../Components/Blog';
 import BlogDetail from '../Components/BlogDetail';
 import BlogSearch from '../Components/BlogSearch';
 import ChatBotSpoonacular from '../Components/ChatBotSpoonacular';
+import DiscoverRecipes from '../Components/DiscoverRecipes';
 import FavoriteList from '../Components/FavoriteList';
 import Profile from '../Components/Profile';
 import RecipeByIngredient from '../Components/RecipeByIngredient';
@@ -31,6 +32,7 @@ const AdminRoutes = () => {
                     <Route path='/favorite-list' element={<FavoriteList />} />
                     <Route path='/blog/detail/:id' element={<BlogDetail />} />
                     <Route path='/profile' element={<Profile />} />
+                    <Route path='/discover-recipes' element={<DiscoverRecipes />} />
                 </Routes>
             </div>
             <ChatBotSpoonacular />
