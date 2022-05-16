@@ -36,9 +36,8 @@ Puedes encontrar más información sobre MakeFit en nuestra [wiki](https://githu
 
 ## 🚀 Demo
 
-[Makefit Demo](https://github.com/academia-geek/demo-day-projects-makefit)
+[Makefit Demo](https://makefit-3e6d3.web.app/landingpage/)
 
-## 📌 UI Design
 
 ## 💻 Run locally
 
